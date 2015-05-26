@@ -1,6 +1,21 @@
 {
   "packages":[
     {
+      "currentVersion":"0.0.1",
+      "description":"Hue Web Interface to Hadoop",
+      "framework":false,
+      "name":"hue",
+      "tags":[
+        "mesosphere",
+        "hadoop",
+        "filesystem",
+        "hdfs"
+      ],
+      "versions":{
+        "0.0.1":"0"
+      }
+    },
+    {
       "currentVersion":"1.596.2",
       "description":"Jenkins is an award-winning application that monitors executions of repeated jobs, such as building a software project or jobs run by cron.",
       "framework":true,
