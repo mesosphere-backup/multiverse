@@ -11,14 +11,7 @@
       "portMappings": [
         { "containerPort": {{port}}, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
       ]
-    },
-    "volumes": [
-      {
-        "containerPath": "/opt/docker/notebooks",
-        "hostPath": "/var/notebooks",
-        "mode": "RW"
-      }
-    ]
+    }
   },
   "healthChecks": [
     {
