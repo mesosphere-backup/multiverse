@@ -1,0 +1,33 @@
+{
+  "id": "bridged-webapp",
+  "cpus": 4,
+  "mem": 4000.0,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "andypetrella/spark-notebook:0.6.0-scala-2.10.4-spark-1.4.0-hadoop-1.0.4",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": {{port}}, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    },
+    "volumes": {
+      {
+        "containerPath": "/opt/docker/notebooks",
+        "hostPath": "/var/notebooks",
+        "mode": "RW"
+      }
+    }
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
