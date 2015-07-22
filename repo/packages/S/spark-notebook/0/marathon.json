@@ -6,7 +6,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "andypetrella/spark-notebook:0.6.0-scala-2.10.4-spark-1.4.0-hadoop-1.0.4",
+      "image": "andypetrella/spark-notebook:0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.4.0-with-hive-with-parquet",
       "network": "HOST"
     }
   },
