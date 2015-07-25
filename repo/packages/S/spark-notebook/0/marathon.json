@@ -1,6 +1,6 @@
 {
   "id": "/spark-notebook",
-  "cpus": 2,
+  "cpus": 0.5,
   "mem": 4000,
   "instances": 1,
   "cmd": "cd spark* && ./bin/spark-notebook -java-home $(pwd)/jre1.7.0_76 -Dmanager.tachyon.enabled=false -Dhttp.port=8899",
