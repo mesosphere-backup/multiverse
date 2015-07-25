@@ -1,15 +1,12 @@
 {
   "id": "spark-notebook",
   "cpus": 2,
-  "mem": 4000.0,
+  "mem": 4000,
   "instances": 1,
-  "container": {
-    "type": "DOCKER",
-    "docker": {
-      "image": "andypetrella/spark-notebook:0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.4.0-with-hive-with-parquet",
-      "network": "HOST"
-    }
-  },
+  "cmd": "./bin/spark-notebook -Dmanager.tachyon.enabled=false -Dhttp.port=8899",
+  "uris": [
+    "https://s3.eu-central-1.amazonaws.com/spark-notebook/tgz/spark-notebook-0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.4.0.tgz"
+  ],
   "acceptedResourceRoles": ["slave_public"],
   "healthChecks": [
     {
@@ -21,5 +18,5 @@
       "maxConsecutiveFailures": 3
     }
   ],
-  "ports": [ 0 ]
+  "ports": [ 8899 ]
 }
