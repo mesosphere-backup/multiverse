@@ -1,7 +1,7 @@
 {
   "id": "/spark-notebook",
-  "cpus": 2,
-  "mem": 4000,
+  "cpus": 1,
+  "mem": 512,
   "instances": 1,
   "cmd": "$(pwd)/jre1.7.0_76/bin/java version > /var/log/mesos/test",
   "uris": [
