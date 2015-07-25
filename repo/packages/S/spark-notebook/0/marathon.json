@@ -5,7 +5,6 @@
   "instances": 1,
   "cmd": "$(pwd)/jre1.7.0_76/bin/java version > /var/log/mesos/test",
   "uris": [
-    "https://downloads.mesosphere.io/java/jre-7u76-linux-x64.tar.gz"
   ],
   "env": {
    "MESOS_JAVA_NATIVE_LIBRARY": "/opt/mesosphere/lib/libmesos.so" 
