@@ -1,15 +1,19 @@
 {
   "id": "spark-notebook",
-  "cpus": 4,
+  "cpus": 2,
   "mem": 4000.0,
   "instances": 1,
   "container": {
     "type": "DOCKER",
     "docker": {
       "image": "andypetrella/spark-notebook:0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.4.0-with-hive-with-parquet",
-      "network": "HOST"
+      "network": "HOST",
+      "portMappings": [
+        { "containerPort": 9000, "hostPort": 0, "servicePort": 8899, "protocol": "tcp" }
+      ]
     }
   },
+  "acceptedResourceRoles": ["slave_public"],
   "healthChecks": [
     {
       "protocol": "HTTP",
@@ -19,5 +23,6 @@
       "intervalSeconds": 20,
       "maxConsecutiveFailures": 3
     }
-  ]
+  ],
+  "ports": [ 8899 ]
 }

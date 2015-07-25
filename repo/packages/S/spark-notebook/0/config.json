@@ -4,7 +4,7 @@
   "properties": {
     "port": {
       "type": "integer",
-      "default": 9000
+      "default": 8899
     }
   },
   "additionalProperties": false,
