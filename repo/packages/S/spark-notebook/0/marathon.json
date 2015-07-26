@@ -3,7 +3,7 @@
   "cpus": 0.5,
   "mem": 4000,
   "instances": 1,
-  "cmd": "cd spark-notebook-0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.4.0 && ./bin/spark-notebook -v -d -java-home $(pwd)/jre1.7.0_76 -Dmanager.tachyon.enabled=false -Dhttp.port=8899",
+  "cmd": "cd spark-notebook-0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.4.0 && JAVA_HOME=$(pwd)/jre1.7.0_76 && ./bin/spark-notebook -v -Dmanager.tachyon.enabled=false -Dhttp.port=8899 -J-Xms4000m -J-Xmx4000m",
   "uris": [
     "https://s3.eu-central-1.amazonaws.com/spark-notebook/tgz/spark-notebook-0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.4.0.tgz",
     "https://downloads.mesosphere.io/java/jre-7u76-linux-x64.tar.gz"
