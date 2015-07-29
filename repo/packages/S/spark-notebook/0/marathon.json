@@ -11,7 +11,7 @@
   "env": {
    "MESOS_JAVA_NATIVE_LIBRARY": "/opt/mesosphere/lib/libmesos.so"
   },
-  "acceptedResourceRoles": [slave_public"],
+  "acceptedResourceRoles": ["slave_public"],
   "healthChecks": [
     {
       "protocol": "HTTP",
