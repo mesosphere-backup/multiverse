@@ -8,5 +8,5 @@
   "framework": true,
   "preInstallNotes": "",
   "postInstallNotes": "Yeah Spark Notebook is in da place!",
-  "tags": [ "spark", "notebook", "data-fellas", "spark-notebook", "interactive", "big-data", "bigdata", "apachespark", "datafellas", "data-fellas" ]
+  "tags": [ "spark", "notebook", "spark-notebook", "interactive", "big-data", "bigdata", "apachespark", "datafellas", "data-fellas" ]
 }
