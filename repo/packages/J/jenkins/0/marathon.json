@@ -8,7 +8,7 @@
    "uris": [
       "https://s3.amazonaws.com/downloads.mesosphere.io/jenkins/0.7.0/jenkins-on-mesos.tgz"
    ],
-   "cmd": "cd jenkins-on-mesos && export JENKINS_HOME=$(pwd) && export JENKINS_URL=http://$MESOS_HOSTNAME:$PORT0 && java $JAVA_OPTS -jar jenkins.war --httpPort=$PORT0",
+   "cmd": "cd jenkins-on-mesos && export JENKINS_HOME=$(pwd) && export JENKINS_URL=http://$MESOS_HOSTNAME:{{port}} && java $JAVA_OPTS -jar jenkins.war --httpPort={{port}}",
    "healthChecks": [
     {
       "protocol": "HTTP",

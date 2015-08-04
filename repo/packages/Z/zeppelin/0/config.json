@@ -1,5 +1,12 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "type": "object",
-  "properties": {}
+  "properties": {
+  	"properties": {
+    "port": {
+      "type": "integer",
+      "default": 8080
+    }
+  },
+  "additionalProperties": false
 }
