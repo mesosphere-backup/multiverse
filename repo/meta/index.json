@@ -22,7 +22,6 @@
       "name":"jenkins",
       "tags":[
         "framework",
-        "cloudbees",
         "continuous-integration"
       ],
       "versions":{

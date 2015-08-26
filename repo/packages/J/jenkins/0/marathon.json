@@ -1,14 +1,18 @@
 {
-  "id": "jenkins",
+  "id": "{{jenkins.name}}",
   "instances": 1,
-  "mem": 1500,
+  "mem": {{jenkins.mem}},
+  "ports": [{{jenkins.port}}],
+  "acceptedResourceRoles": ["slave_public"],
   "env": {
-    "JAVA_OPTS": "-Xmx1024m"
+    "JAVA_OPTS": "{{java.opts}}",
+    "SHARED_DATA_DIR": "{{jenkins.home}}"
    },
    "uris": [
-      "https://s3.amazonaws.com/downloads.mesosphere.io/jenkins/0.7.0/jenkins-on-mesos.tgz"
+      "{{jenkins.tarball}}",
+      "{{java.tarball}}"
    ],
-   "cmd": "cd jenkins-on-mesos && export JENKINS_HOME=$(pwd) && export JENKINS_URL=http://$MESOS_HOSTNAME:$PORT0 && java $JAVA_OPTS -jar jenkins.war --httpPort=$PORT0",
+   "cmd": "export JENKINS_HOME=$(cd $SHARED_DATA_DIR && pwd) && export JENKINS_URL=http://$MESOS_HOSTNAME:$PORT0 && ./jre*/bin/java $JAVA_OPTS -jar $JENKINS_HOME/jenkins.war --httpPort=$PORT0",
    "healthChecks": [
     {
       "protocol": "HTTP",

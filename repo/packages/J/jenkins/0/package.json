@@ -6,7 +6,9 @@
   "website": "http://jenkins-ci.org",
   "framework": true,
   "description": "Jenkins is an award-winning application that monitors executions of repeated jobs, such as building a software project or jobs run by cron.",
-  "tags": ["framework", "cloudbees", "continuous-integration"],
+  "tags": ["framework", "continuous-integration"],
+  "preInstallNotes":"Jenkins on Mesos is alpha and there may be bugs, incomplete features, incorrect documentation or other discrepancies.\nIf NFS is not setup with Jenkins using the options flag in the CLI, Jenkins will NOT have failover redundancy or save your data in any way. Do NOT use jenkins in this way in any kind of production or persistent environment.",
+  "postInstallNotes": "",
   "images": {
     "icon-small": "https://downloads.mesosphere.io/jenkins/assets/icon-service-jenkins-small.png",
     "icon-medium": "https://downloads.mesosphere.io/jenkins/assets/icon-service-jenkins-medium.png",

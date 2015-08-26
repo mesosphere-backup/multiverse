@@ -1,5 +1,66 @@
 {
-  "$schema": "http://json-schema.org/schema#",
   "type": "object",
-  "properties": {}
+  "properties": {
+    "jenkins": {
+      "description": "Jenkins specific configuration properties",
+      "type": "object",
+      "properties": {
+      	"name": {
+          "default": "jenkins",
+          "description": "The name of Jenkins on marathon.",
+          "type": "string"
+        },
+        "home": {
+          "default": "./jenkins-on-mesos",
+          "description": "The location of your Jenkins home drive. If using NFS, set this to the location of the NFS drive as it appears on all machines.",
+          "type": "string"
+        },
+        "port": {
+          "default": 12345,
+          "description": "Jenkins' static port binding. For fail-over to function, this cannot be random. However, using a port number of 0 will make it random.",
+          "type": "integer"
+        },
+        "mem": {
+          "default": 700,
+          "description": "Jenkins' memory reservation.",
+          "type": "integer"
+        },
+        "tarball": {
+          "default": "https://downloads.mesosphere.io/jenkins/0.8.0/jenkins-on-mesos.tgz",
+          "description": "The cluster-wide accessible location of your Jenkins tarball.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "home",
+        "port",
+        "mem",
+        "tarball"
+      ]
+    },
+    "java": {
+    	"description": "Java specific configuration properties",
+      "type": "object",
+      "properties": {
+      	"opts": {
+          "default": "-Xmx512m",
+          "description": "Regular java cmdline flags",
+          "type": "string"
+        },
+        "tarball": {
+          "default": "https://downloads.mesosphere.io/java/jre-7u76-linux-x64.tar.gz",
+          "description": "The cluster-wide accessible location of your Java tarball.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "opts",
+        "tarball"
+      ]
+    }
+  },
+  "required": [
+    "jenkins",
+    "java"
+  ]
 }
