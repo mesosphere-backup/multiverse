@@ -1,6 +1,49 @@
 {
   "packages":[
     {
+      "currentVersion":"5.4.3",
+      "description":"Cloud-scale monitoring",
+      "framework":false,
+      "name":"datadog",
+      "tags":[
+        "datadog",
+        "monitoring"
+      ],
+      "versions":{
+        "5.4.3":"0"
+      }
+    },
+    {
+      "currentVersion":"0.2.0",
+      "description":"DCOS implementation of the Mesos-Elasticsearch framework",
+      "framework":true,
+      "name":"elasticsearch",
+      "tags":[
+        "dcos",
+        "mesos",
+        "framework",
+        "elasticsearch",
+        "elastic"
+      ],
+      "versions":{
+        "0.2.0":"0"
+      }
+    },
+    {
+      "currentVersion":"0.1.0",
+      "description":"Example DCOS application package",
+      "framework":false,
+      "name":"helloworld",
+      "tags":[
+        "mesosphere",
+        "example",
+        "subcommand"
+      ],
+      "versions":{
+        "0.1.0":"0"
+      }
+    },
+    {
       "currentVersion":"0.0.1",
       "description":"Hue Web Interface to Hadoop",
       "framework":false,
@@ -29,6 +72,23 @@
       }
     },
     {
+      "currentVersion":"v1.0.5-v0.6.4-alpha",
+      "description":"Manage a cluster of Linux containers as a single system to accelerate Dev and simplify Ops.",
+      "framework":true,
+      "name":"kubernetes",
+      "tags":[
+        "mesosphere",
+        "framework",
+        "pod",
+        "label",
+        "paas"
+      ],
+      "versions":{
+        "k8s-0.14.2-k8sm-0.5-dcos-20150603T1136520000":"0",
+        "v1.0.5-v0.6.4-alpha":"1"
+      }
+    },
+    {
       "currentVersion":"0.0.1",
       "description":"Spark Notebook package for DCOS",
       "framework":true,
@@ -49,6 +109,20 @@
       }
     },
     {
+      "currentVersion":"0.4.0",
+      "description":"Swarm is a Docker-native clustering system.",
+      "framework":true,
+      "name":"swarm",
+      "tags":[
+        "mesosphere",
+        "framework",
+        "docker"
+      ],
+      "versions":{
+        "0.4.0":"0"
+      }
+    },
+    {
       "currentVersion":"0.0.1",
       "description":"Zeppelin is a web-based notebook that enables interactive data analytics",
       "framework":true,
@@ -66,5 +140,5 @@
       }
     }
   ],
-  "version":"1.0"
+  "version":"1.0.0-rc1"
 }

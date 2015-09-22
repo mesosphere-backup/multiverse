@@ -3,11 +3,11 @@ set -o errexit -o nounset -o pipefail
 
 SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 UNIVERSE_DIR="$SCRIPTS_DIR/..";
-META_DIR="$UNIVERSE_DIR/repo/meta"
+SCHEMA_DIR=$UNIVERSE_DIR/repo/meta/schema
 
-INDEX_FILE_NAME="index.json"
+echo "Validating version...";
+jsonschema -i $UNIVERSE_DIR/repo/meta/version.json $SCHEMA_DIR/version-schema.json;
 
-echo "Building index...";
-$SCRIPTS_DIR/"build-index.py" $UNIVERSE_DIR;
 echo "OK";
+
 
