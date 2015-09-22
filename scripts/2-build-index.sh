@@ -10,3 +10,4 @@ INDEX_FILE_NAME="index.json"
 echo "Building index...";
 $SCRIPTS_DIR/"build-index.py" $UNIVERSE_DIR;
 echo "OK";
+
