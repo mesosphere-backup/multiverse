@@ -5,4 +5,4 @@ The Mesosphere Multiverse package repository is a home for experimental packages
 ## Instructions
 
 You can include the multiverse in your DCOS CLI by typing:
-`dcos config prepend package.sources https://github.com/mesosphere/multiverse/archive/master.zip`
+`dcos config prepend package.sources https://github.com/mesosphere/multiverse/archive/version-1.x.zip`
