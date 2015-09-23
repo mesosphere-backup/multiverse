@@ -89,6 +89,20 @@
       }
     },
     {
+      "currentVersion":"0.15.1-0.1",
+      "description":"The Prometheus monitoring system and time series database.",
+      "framework":true,
+      "name":"prometheus",
+      "tags":[
+        "mesosphere",
+        "monitoring",
+        "time-series"
+      ],
+      "versions":{
+        "0.15.1-0.1":"0"
+      }
+    },
+    {
       "currentVersion":"0.0.1",
       "description":"Spark Notebook package for DCOS",
       "framework":true,
