@@ -2,6 +2,20 @@
   "packages":[
     {
       "currentVersion":"0.0.1",
+      "description":"A distributed consistent key-value store for shared configuration and service discovery.",
+      "framework":true,
+      "name":"etcd",
+      "tags":[
+        "mesosphere",
+        "framework",
+        "consensus"
+      ],
+      "versions":{
+        "0.0.1":"0"
+      }
+    },
+    {
+      "currentVersion":"0.0.1",
       "description":"Hue Web Interface to Hadoop",
       "framework":false,
       "name":"hue",
