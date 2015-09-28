@@ -1,0 +1,21 @@
+{
+  "id": "{{openvpn.framework-name}}",
+  "cpus": {{openvpn.cpus}},
+  "mem": {{openvpn.mem}},
+  "instances": {{openvpn.instances}},
+  "cmd": "/dcos/bin/run.bash scheduler",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "mesosphere/dcos-openvpn",
+      "forcePullImage": true,
+      "network": "HOST"
+    }
+  },
+  "ports": [],
+  "env": {
+    "MESOS_CONFIG": "zk://master.mesos:2181/mesos",
+    "IMAGE": "mesosphere/dcos-openvpn",
+    "FRAMEWORK_NAME": "{{openvpn.framework-name}}"
+  }
+}

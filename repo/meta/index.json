@@ -89,6 +89,19 @@
       }
     },
     {
+      "currentVersion":"0.0.0-0.1",
+      "description":"Your private path to access network resources and services securely",
+      "framework":true,
+      "name":"openvpn",
+      "tags":[
+        "vpn",
+        "remote-access"
+      ],
+      "versions":{
+        "0.0.0-0.1":"0"
+      }
+    },
+    {
       "currentVersion":"0.0.1",
       "description":"Spark Notebook package for DCOS",
       "framework":true,
