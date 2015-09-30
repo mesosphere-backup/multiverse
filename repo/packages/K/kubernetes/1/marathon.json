@@ -2,7 +2,7 @@
   "id": "{{kubernetes.framework-name}}",
   "cpus": {{kubernetes.cpus}},
   "mem": {{kubernetes.mem}},
-  "acceptedResourceRoles": {{kubernetes.resource-roles}},
+  "acceptedResourceRoles": {{{kubernetes.resource-roles}}},
   "container": {
     "type": "DOCKER",
     "docker": {
