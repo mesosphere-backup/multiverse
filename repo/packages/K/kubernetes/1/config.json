@@ -81,6 +81,15 @@
           "minimum": 0,
           "type": "integer"
         },
+        "resource-roles": {
+          "default": ["slave_public"],
+          "description": "List of acceptable Mesos resource roles to consider when scheduling the Kubernetes Marathon container.",
+          "items": {
+            "pattern": "^[\\s]+",
+            "type": "string"
+          },
+          "type": "array"
+        },
         "apiserver-port": {
           "default": 25500,
           "description": "Read/write host port that the Kubernetes apiserver listens on.",
