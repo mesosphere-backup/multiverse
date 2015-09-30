@@ -85,7 +85,7 @@
           "default": ["slave_public"],
           "description": "List of acceptable Mesos resource roles to consider when scheduling the Kubernetes Marathon container.",
           "items": {
-            "pattern": "^[\\S]+$",
+            "pattern": "^[^\\s]+$",
             "type": "string"
           },
           "type": "array"
