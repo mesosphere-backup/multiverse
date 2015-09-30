@@ -146,13 +146,13 @@
         },
         "default-container-cpu-limit": {
           "default": 0.25,
-          "description": "CPU shared to allocate to a containter in a pod which is not CPU limited.",
+          "description": "CPU shared to allocate to a container in a pod which is not CPU limited.",
           "minimum": 0.01,
           "type": "number"
         },
         "default-container-mem-limit": {
           "default": 64.0,
-          "description": "Memory (MB) to allocate to a containter in a pod which is not memory limited.",
+          "description": "Memory (MB) to allocate to a container in a pod which is not memory limited.",
           "minimum": 32.0,
           "type": "number"
         },
@@ -200,7 +200,7 @@
       "type": "object"
     },
     "mesos": {
-      "depscription": "Mesos specific configuration properties",
+      "description": "Mesos specific configuration properties",
       "properties": {
         "master": {
           "default": "zk://master.mesos:2181/mesos",
