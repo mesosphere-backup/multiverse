@@ -214,6 +214,26 @@
       }
     },
     {
+      "currentVersion":"1.2",
+      "description":"Quobyte is a software defined distributed file system, running on commodity hardware.",
+      "framework":false,
+      "name":"quobyte",
+      "tags":[
+        "mesosphere",
+        "framework",
+        "quobyte",
+        "storage",
+        "filesystem",
+        "scalability",
+        "mesos",
+        "performance",
+        "bigdata"
+      ],
+      "versions":{
+        "1.2":"0"
+      }
+    },
+    {
       "currentVersion":"0.0.1",
       "description":"Spark Notebook package for DCOS",
       "framework":true,
