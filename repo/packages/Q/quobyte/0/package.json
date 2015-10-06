@@ -14,6 +14,7 @@
   ],
   "maintainer": "silvan@quobyte.com",
   "description": "Quobyte is a software defined distributed file system, running on commodity hardware.",
+  "framework": true,
   "scm": "https://github.com/bar/foo.git",
   "website": "http://www.quobyte.com/",
   "images": {
@@ -28,5 +29,11 @@
   },
   "preInstallNotes": "Welcome to Quobyte.",
   "postInstallNotes": "Quobyte has been successfully installed!\n\n\tDocumentation: https://support.quobyte.com/",
-  "postUninstallNotes": "Quobyte has been uninstalled and will no longer run."
+  "postUninstallNotes": "Quobyte has been uninstalled and will no longer run.",
+  "licenses": [
+    {
+      "name": "Apache License Version 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ]
 }
