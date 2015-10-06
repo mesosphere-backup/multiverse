@@ -30,7 +30,7 @@
   },
   "healthChecks": [
     {
-      "path": "/",
+      "path": "/v1/health",
       "portIndex": 0,
       "protocol": "HTTP",
       "gracePeriodSeconds": 300,
