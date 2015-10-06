@@ -1,5 +1,5 @@
 {
-  "id": "quobyte",
+  "id": {{quobyte.framework-name}},
   "cpus": "1.0",
   "mem": "1024",
   "instances": "1",

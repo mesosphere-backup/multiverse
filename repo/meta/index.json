@@ -216,7 +216,7 @@
     {
       "currentVersion":"1.2",
       "description":"Quobyte is a software defined distributed file system, running on commodity hardware.",
-      "framework":false,
+      "framework":true,
       "name":"quobyte",
       "tags":[
         "mesosphere",
