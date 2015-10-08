@@ -108,14 +108,8 @@
       "framework":true,
       "name":"quobyte",
       "tags":[
-        "mesosphere",
-        "framework",
-        "quobyte",
         "storage",
         "filesystem",
-        "scalability",
-        "mesos",
-        "performance",
         "bigdata"
       ],
       "versions":{

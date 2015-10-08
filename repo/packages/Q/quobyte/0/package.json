@@ -2,14 +2,8 @@
   "name": "quobyte",
   "version": "1.2",
   "tags": [
-    "mesosphere",
-    "framework",
-    "quobyte",
     "storage",
     "filesystem",
-    "scalability",
-    "mesos",
-    "performance",
     "bigdata"
   ],
   "maintainer": "silvan@quobyte.com",
@@ -27,9 +21,9 @@
       "http://www.quobyte.com/mesos/screen-3.png"
     ]
   },
-  "preInstallNotes": "Welcome to Quobyte.",
+  "preInstallNotes": "Installing Quobyte.\nPlease ensure your devices have been set up (see https://github.com/quobyte/mesos-framework#setup-devices)",
   "postInstallNotes": "Quobyte has been successfully installed!\n\n\tDocumentation: https://support.quobyte.com/",
-  "postUninstallNotes": "Quobyte has been uninstalled and will no longer run.",
+  "postUninstallNotes": "Quobyte has been uninstalled.\n Please note that device tags do persist (see https://github.com/quobyte/mesos-framework#setup-devices)",
   "licenses": [
     {
       "name": "Apache License Version 2.0",
