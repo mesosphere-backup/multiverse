@@ -1,11 +1,11 @@
 {
   "id": {{quobyte.framework-name}},
-  "cpus": "1.0",
-  "mem": "1024",
+  "cpus": {{quobyte.cpus}},
+  "mem": {{quobyte.mem}},
   "instances": "1",
   "args": [
     {{quobyte.zk}},
-    {{quobyte.master}},
+    {{mesos.master}},
     {{quobyte.port}},
     {{quobyte.docker_image}},
     {{quobyte.mesos-dns_domain}}

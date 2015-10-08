@@ -1,10 +1,34 @@
 {
   "type": "object",
   "properties": {
+    "mesos": {
+      "depscription": "Mesos specific configuration properties",
+      "properties": {
+        "master": {
+          "default": "zk://master.mesos:2181/mesos",
+          "description": "The URL of the Mesos master. The format is a comma-delimited list of hosts like zk://host1:port,host2:port/mesos. If using ZooKeeper, pay particular attention to the leading zk:// and trailing /mesos! If not using ZooKeeper, standard host:port patterns, like localhost:5050 or 10.0.0.5:5050,10.0.0.6:5050, are also acceptable.",
+          "type": "string"
+        }
+      },
+      "required": ["master"],
+      "type": "object"
+    },
     "quobyte": {
       "type": "object",
       "description": "Quobyte Framework specific configuration properties",
       "properties": {
+        "cpus": {
+          "default": 1.0,
+          "description": "CPU shares to allocate to each Quobyte scheduler instance.",
+          "minimum": 0.1,
+          "type": "number"
+        },
+        "mem": {
+          "default": 512.0,
+          "description": "Memory (MB) to allocate to each Quboyte scheduler instance.",
+          "minimum": 128.0,
+          "type": "number"
+        },
         "framework-name": {
           "type": "string",
           "description": "The name of the framework.",
@@ -13,17 +37,12 @@
         "zk": {
           "type": "string",
           "description": "Name or IP address of the zookeeper server.",
-          "default": "$ZOOKEEPER"
-          },
-        "master": {
-          "type": "string",
-          "description": "Name, IP address or Zookeeper URL of the Mesos master server.",
-          "default": "$MESOS_MASTER"
+          "default": "master.mesos:2181"
           },
         "port": {
           "type": "string",
           "description": "Port to which the framework's HTTP server is bound.",
-          "default": "$PORT"
+          "default": "7878"
           },
         "docker_image": {
           "type": "string",
@@ -33,12 +52,11 @@
         "mesos-dns_domain": {
           "type": "string",
           "description": "The Mesos DNS domain featuring SRV records in the Mesos cluster.",
-          "default": "$MESOS_DNS_DOMAIN"
+          "default": "mesos"
           }
       },
       "required": [
         "zk",
-        "master",
         "port",
         "docker_image",
         "mesos-dns_domain"
@@ -46,6 +64,7 @@
     }
   },
   "required": [
+    "mesos",
     "quobyte"
   ]
 }
