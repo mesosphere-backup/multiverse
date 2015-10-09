@@ -167,7 +167,7 @@
           "default": [],
           "description": "List of URIs that will be download and made available in the current working directory of the scheduler.",
           "items": {
-            "pattern": "^[\\s]+",
+            "pattern": "^[^\\s]+",
             "type": "string"
           },
           "type": "array"
