@@ -29,6 +29,12 @@
           "minimum": 128.0,
           "type": "number"
         },
+        "instances": {
+          "default": 1,
+          "description": "Number of Quobyte framework instances to run.",
+          "minimum": 1,
+          "type": "integer"
+        },
         "framework-name": {
           "type": "string",
           "description": "The name of the framework.",
