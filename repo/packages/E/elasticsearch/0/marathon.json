@@ -2,7 +2,6 @@
   "id": "{{elasticsearch.framework-name}}",
   "cpus": {{elasticsearch.scheduler.cpu}},
   "mem": {{elasticsearch.scheduler.ram}},
-  "ports": [0],
   "instances": {{elasticsearch.scheduler.instances}},
   "healthChecks": [
     {
