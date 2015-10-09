@@ -2,7 +2,7 @@
   "id": {{quobyte.framework-name}},
   "cpus": {{quobyte.cpus}},
   "mem": {{quobyte.mem}},
-  "instances": "1",
+  "instances": {{quobyte.instances}},
   "args": [
     {{quobyte.zk}},
     {{mesos.master}},
