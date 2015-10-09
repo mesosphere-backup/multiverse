@@ -190,6 +190,27 @@
       ],
       "type": "object"
     },
+    "marathon": {
+      "description": "Marathon specific configuration properties",
+      "properties": {
+        "labels": {
+          "default": {},
+          "description": "Set of labels to be applied to the Kubernetes Marathon application instance.",
+          "type": "object"
+        },
+        "resource-roles": {
+          "default": ["*"],
+          "description": "List of acceptable Mesos resource roles to consider when scheduling the Kubernetes Marathon container. Set to ['slave_public'] to force running Kubernetes on a public slave.",
+          "items": {
+            "pattern": "^[^\\s]+$",
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": ["labels","resource-roles"],
+      "type": "object"
+    },
     "mesos": {
       "description": "Mesos specific configuration properties",
       "properties": {
@@ -205,6 +226,7 @@
   },
   "required": [
     "kubernetes",
+    "marathon",
     "mesos"
   ],
   "type": "object"
