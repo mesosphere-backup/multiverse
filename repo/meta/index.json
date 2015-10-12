@@ -1,9 +1,6 @@
 {
   "packages":[
     {
-      "versions":{}
-    },
-    {
       "currentVersion":"0.1.0",
       "description":"A Mesos Framework that allows running and resizing one or multiple Crate database clusters.",
       "framework":true,
