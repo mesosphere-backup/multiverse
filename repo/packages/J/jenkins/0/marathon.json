@@ -1,25 +1,41 @@
 {
-  "id": "{{jenkins.name}}",
-  "instances": 1,
+  "id": "{{jenkins.framework-name}}",
+  "cpus": {{jenkins.cpus}},
   "mem": {{jenkins.mem}},
-  "ports": [{{jenkins.port}}],
-  "acceptedResourceRoles": ["slave_public"],
+  "instances": 1,
   "env": {
-    "JAVA_OPTS": "{{java.opts}}",
-    "SHARED_DATA_DIR": "{{jenkins.home}}"
+      "CATALINA_OPTS": "{{jenkins.catalina_opts}}",
+      "JENKINS_FRAMEWORK_NAME": "{{jenkins.framework-name}}",
+      "JENKINS_CONTEXT": "/service/{{jenkins.framework-name}}",
+      "LD_LIBRARY_PATH": "/opt/mesosphere/lib"
+  },
+   "container": {
+       "type": "DOCKER",
+       "docker": {
+           "image": "mesosphere/jenkins",
+           "network": "HOST"
+       },
+       "volumes": [
+           {
+               "containerPath": "/var/jenkins_home",
+               "hostPath": "{{jenkins.host_volume}}/{{jenkins.framework-name}}",
+               "mode": "RW"
+           },
+           {
+               "containerPath": "/opt/mesosphere",
+               "hostPath": "/opt/mesosphere",
+               "mode": "RO"
+           }
+       ]
    },
-   "uris": [
-      "{{jenkins.tarball}}",
-      "{{java.tarball}}"
-   ],
-   "cmd": "export JENKINS_HOME=$(cd $SHARED_DATA_DIR && pwd) && export JENKINS_URL=http://$MESOS_HOSTNAME:$PORT0 && ./jre*/bin/java $JAVA_OPTS -jar $JENKINS_HOME/jenkins.war --httpPort=$PORT0",
    "healthChecks": [
     {
-      "protocol": "HTTP",
+      "path": "/service/{{jenkins.framework-name}}",
       "portIndex": 0,
-      "path": "/",
+      "protocol": "HTTP",
       "gracePeriodSeconds": 30,
-      "intervalSeconds": 20,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
       "maxConsecutiveFailures": 3
     }
   ]
