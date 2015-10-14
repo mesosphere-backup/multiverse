@@ -4,7 +4,7 @@
       "description": "Kubernetes specific configuration properties",
       "properties": {
         "docker-image": {
-          "default": "mesosphere/kubernetes:v1.0.5-v0.6.4-alpha",
+          "default": "mesosphere/kubernetes:v1.0.6-v0.6.5-3-ge446150-unclean-alpha",
           "description": "Docker image used to launch the Kubernetes framework on DCOS.",
           "type": "string"
         },
@@ -72,7 +72,7 @@
           "type": "number"
         },
         "failover-timeout": {
-          "default": 120,
+          "default": 604800,
           "description": "The failover_timeout for Mesos in seconds. If a new Kubernetes scheduler instance has not re-registered with Mesos this long after a failover, Mesos will shut down all running pods. Requires checkpointing to be enabled.",
           "minimum": 0,
           "type": "integer"
