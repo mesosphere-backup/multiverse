@@ -26,7 +26,7 @@
     {{/kubernetes.mesos-role}}
 
     {{#kubernetes.etcd-mesos}}
-    "ETCD_MESOS": "{{kubernetes.etcd-mesos}}",
+    "ETCD_MESOS_FRAMEWORK_NAME": "{{kubernetes.etcd-mesos}}",
     {{/kubernetes.etcd-mesos}}
 
     {{#kubernetes.enable-dns}}
