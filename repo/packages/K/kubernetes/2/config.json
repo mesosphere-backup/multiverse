@@ -79,8 +79,15 @@
           "type": "integer"
         },
         "apiserver-port": {
-          "default": 25500,
+          "default": 25503,
           "description": "Read/write host port that the Kubernetes apiserver listens on.",
+          "minimum": 1,
+          "maximum": 65535,
+          "type": "integer"
+        },
+        "apiserver-proxy-port": {
+          "default": 25500,
+          "description": "Read/write host port that the Kubernetes nginx proxy in front of the apiserver listens on.",
           "minimum": 1,
           "maximum": 65535,
           "type": "integer"
