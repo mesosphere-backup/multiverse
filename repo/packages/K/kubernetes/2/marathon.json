@@ -17,7 +17,7 @@
     "GLOG_v": "{{kubernetes.logging-verbosity}}",
     "DEFAULT_DNS_NAME": "{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}",
     "FRAMEWORK_NAME": "{{kubernetes.framework-name}}",
-    "FRAMEWORK_WEBURI": "http://{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}:{{kubernetes.apiserver-port}}",
+    "FRAMEWORK_WEBURI": "http://{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}:{{kubernetes.apiserver-proxy-port}}",
 
     {{#mesos.master}}
     "K8SM_MESOS_MASTER": "{{mesos.master}}",
@@ -61,6 +61,7 @@
 
     "K8SM_FAILOVER_TIMEOUT": "{{kubernetes.failover-timeout}}",
     "APISERVER_PORT": "{{kubernetes.apiserver-port}}",
+    "APISERVER_PROXY_PORT": "{{kubernetes.apiserver-proxy-port}}",
     "APISERVER_SECURE_PORT": "{{kubernetes.apiserver-secure-port}}",
     "SCHEDULER_PORT": "{{kubernetes.scheduler-port}}",
     "SCHEDULER_DRIVER_PORT": "{{kubernetes.scheduler-driver-port}}",
@@ -72,7 +73,7 @@
     "SCHEDULER_MESOS_EXECUTOR_CPUS": "{{kubernetes.initial-executor-cpus}}",
     "SCHEDULER_MESOS_EXECUTOR_MEM": "{{kubernetes.initial-executor-mem}}"
   },
-  "ports": [{{kubernetes.apiserver-port}}, {{kubernetes.apiserver-secure-port}}, {{kubernetes.scheduler-port}}, {{kubernetes.controller-manager-port}}, {{kubernetes.scheduler-driver-port}}],
+  "ports": [{{kubernetes.apiserver-proxy-port}},{{kubernetes.apiserver-port}}, {{kubernetes.apiserver-secure-port}}, {{kubernetes.scheduler-port}}, {{kubernetes.controller-manager-port}}, {{kubernetes.scheduler-driver-port}}],
   "requirePorts": true,
   "upgradeStrategy":{
     "minimumHealthCapacity": 0,
