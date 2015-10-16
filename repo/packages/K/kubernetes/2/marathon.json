@@ -25,9 +25,9 @@
     "K8SM_MESOS_ROLE": "{{kubernetes.mesos-role}}",
     {{/kubernetes.mesos-role}}
 
-    {{#kubernetes.etcd-mesos}}
-    "ETCD_MESOS_FRAMEWORK_NAME": "{{kubernetes.etcd-mesos}}",
-    {{/kubernetes.etcd-mesos}}
+    {{#kubernetes.etcd-mesos-framework-name}}
+    "ETCD_MESOS_FRAMEWORK_NAME": "{{kubernetes.etcd-mesos-framework-name}}",
+    {{/kubernetes.etcd-mesos-framework-name}}
 
     {{#kubernetes.enable-dns}}
     "ENABLE_DNS": "{{kubernetes.enable-dns}}",

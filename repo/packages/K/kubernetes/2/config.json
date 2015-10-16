@@ -19,9 +19,9 @@
           "description": "Set to true to enable Kubernetes local DNS services, allows pods to locate services by name.",
           "type": "boolean"
         },
-        "etcd-mesos": {
+        "etcd-mesos-framework-name": {
           "default": "etcd",
-          "description": "Which etcd-mesos framework to rely on.  Corresponds to the configured framework-name for the etcd-mesos framework. Set this to disabled to use a local etcd instance in the scheduler container.",
+          "description": "Which etcd-mesos framework to rely on.  Corresponds to the configured framework-name for an etcd-mesos framework. Set this to disabled to use a local etcd instance in the scheduler container.",
           "type": "string"
         },
         "framework-name": {
