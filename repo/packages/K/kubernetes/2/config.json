@@ -20,7 +20,7 @@
           "type": "boolean"
         },
         "etcd-mesos-framework-name": {
-          "default": "etcd",
+          "default": "disabled",
           "description": "Which etcd-mesos framework to rely on.  Corresponds to the configured framework-name for an etcd-mesos framework. Set this to disabled to use a local etcd instance in the scheduler container.",
           "type": "string"
         },
