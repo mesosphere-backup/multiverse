@@ -5,6 +5,38 @@
       "description": "Prometheus specific configuration properties",
       "type": "object",
       "properties": {
+        "framework-name": {
+          "default": "prometheus",
+          "description": "Framework Name",
+          "type": "string"
+        },
+        "cpus": {
+          "default": 1,
+          "description": "CPU shares to allocate to each marathon-lb instance.",
+          "minimum": 0.5,
+          "type": "number"
+        },
+        "mem": {
+          "default": 8192.0,
+          "description": "Memory (MB) to allocate to each marathon-lb task.",
+          "minimum": 1024.0,
+          "type": "number"
+        },
+        "instances": {
+          "default": 1,
+          "description": "Number of instances to run",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "hostname": {
+          "description": "Run Prometheus only on hosts matching this.",
+          "type": "string"
+        },
+        "storage-path": {
+          "default": "/var/lib/mesos-state/prometheus",
+          "description": "Path on host to store prometheus state.",
+          "type": "string"
+        },
         "master": {
           "description": "The URL of the Mesos master. The format is a comma-delimited list of hosts like zk://host1:port,host2:port/mesos. If using ZooKeeper, pay particular attention to the leading zk:// and trailing /mesos! If not using ZooKeeper, standard URLs like http://localhost are also acceptable.",
           "type": "string",
@@ -15,7 +47,7 @@
           "type": "string"
         }
       },
-      "required": ["master"]
+      "required": ["master", "hostname"]
     }
   },
   "required": ["prometheus"]

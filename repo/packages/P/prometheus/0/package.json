@@ -1,6 +1,6 @@
 {
   "name": "prometheus",
-  "version": "0.15.1-0.1",
+  "version": "0.16.1-0.1",
   "scm": "https://github.com/prometheus/prometheus",
   "maintainer": "support@mesosphere.io",
   "description": "The Prometheus monitoring system and time series database.",
@@ -10,7 +10,7 @@
     "icon-medium": "https://downloads.mesosphere.io/prometheus/artifacts/images/prometheus-96x96.png",
     "icon-large": "https://downloads.mesosphere.io/prometheus/artifacts/images/prometheus-256x256.png"
   },
-  "tags": ["mesosphere", "monitoring", "time-series"],
+  "tags": ["alerting", "monitoring", "time-series", "health"],
   "postInstallNotes": "Prometheus DCOS Service has been successfully installed!",
   "postUninstallNotes": "Prometheus DCOS Service has been uninstalled and will no longer run.",
   "licenses": [

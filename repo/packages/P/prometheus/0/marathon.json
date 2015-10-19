@@ -1,17 +1,16 @@
 {
-  "id": "prometheus",
-  "cpus": 1,
-  "mem": 2048,
-  "requirePorts": true,
-  "instances": 1,
-  "constraints": [["hostname", "UNIQUE"]],
+  "id": "{{prometheus.framework-name}}",
+  "instances": {{prometheus.instances}},
+  "cpus": {{prometheus.cpus}},
+  "mem": {{prometheus.mem}},
+  "constraints": [["hostname", "LIKE", "{{prometheus.hostname}}"]],
   "env": {
     "PAGERDUTY_KEY": "{{ prometheus.pagerduty-key }}"
   },
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "mesosphere/prometheus-dcos",
+      "image": "mesosphere/prometheus-dcos:0.16.1",
       "network": "BRIDGE",
       "portMappings": [{
         "containerPort": 9090,
@@ -26,7 +25,12 @@
         "protocol": "tcp"
       }],
       "forcePullImage": true
-    }
+    },
+    "volumes": [{
+      "containerPath": "/prometheus",
+      "hostPath": "{{prometheus.storage-path}}",
+      "mode": "RW"
+    }]
   },
   "healthChecks": [
     {
