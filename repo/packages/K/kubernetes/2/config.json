@@ -19,6 +19,12 @@
           "description": "Set to true to enable Kubernetes local DNS services, allows pods to locate services by name.",
           "type": "boolean"
         },
+        "etcd-mesos-framework-name": {
+          "default": "disabled",
+          "description": "Which etcd-mesos framework to rely on. Corresponds to the configured framework-name for an etcd-mesos framework. Set this to disabled to use a local etcd instance in the scheduler container.",
+          "type": "string",
+          "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
+        },
         "framework-name": {
           "default": "kubernetes",
           "description": "The framework name to register with Mesos.",
@@ -60,15 +66,6 @@
           "type": "string",
           "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
         },
-        "enable-etcd-server": {
-          "default": true,
-          "description": "Set to false to disable the pre-packaged etcd server component. Do this if you already have an etcd cluster set up that you want to use as the backing store for Kubernetes. Also see the docs for etcd-server-list.",
-          "type": "boolean"
-        },
-        "etcd-server-list": {
-          "description": "Comma-delimited list of URLs that reference etcd-server endpoints. For example, http://myserver:2001,http://anotherserver:2001. Specify this option if you have disabled the built-in etcd-server via disable-etcd-server.",
-          "type": "string"
-        },
         "cpus": {
           "default": 1.0,
           "description": "CPU shares to allocate to each instance.",
@@ -76,7 +73,7 @@
           "type": "number"
         },
         "failover-timeout": {
-          "default": 120,
+          "default": 604800,
           "description": "The failover_timeout for Mesos in seconds. If a new Kubernetes scheduler instance has not re-registered with Mesos this long after a failover, Mesos will shut down all running pods. Requires checkpointing to be enabled.",
           "minimum": 0,
           "type": "integer"
@@ -179,6 +176,7 @@
         }
       },
       "required": [
+        "etcd-mesos-framework-name",
         "framework-name",
         "cpus",
         "dns-suffix",
