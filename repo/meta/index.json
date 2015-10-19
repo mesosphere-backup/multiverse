@@ -101,8 +101,8 @@
       }
     },
     {
-      "currentVersion":"v1.0.6-v0.6.5-alpha",
-      "description":"Manage a cluster of Linux containers as a single system to accelerate Dev and simplify Ops.",
+      "currentVersion":"v1.0.6-v0.6.6-alpha",
+      "description":"Kubernetes is an open source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.",
       "framework":true,
       "name":"kubernetes",
       "tags":[
@@ -115,7 +115,7 @@
       "versions":{
         "k8s-0.14.2-k8sm-0.5-dcos-20150603T1136520000":"0",
         "v1.0.5-v0.6.4-alpha":"1",
-        "v1.0.6-v0.6.5-alpha":"2"
+        "v1.0.6-v0.6.6-alpha":"2"
       }
     },
     {
