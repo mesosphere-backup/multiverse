@@ -6,7 +6,7 @@
       "type": "object",
       "properties": {
         "framework-name": {
-          "description": "The name of the Jenkins framework.",
+          "description": "The framework name to register with Mesos.",
           "type": "string",
           "default": "jenkins"
         },
