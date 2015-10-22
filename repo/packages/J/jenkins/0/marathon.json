@@ -12,7 +12,7 @@
    "container": {
        "type": "DOCKER",
        "docker": {
-           "image": "mesosphere/jenkins",
+           "image": "mesosphere/jenkins:0.1.0",
            "network": "HOST"
        },
        "volumes": [
