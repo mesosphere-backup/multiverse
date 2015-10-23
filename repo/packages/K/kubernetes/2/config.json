@@ -4,7 +4,7 @@
       "description": "Kubernetes specific configuration properties",
       "properties": {
         "docker-image": {
-          "default": "mesosphere/kubernetes:v1.0.6-v0.6.6-alpha",
+          "default": "mesosphere/kubernetes:v1.0.6-v0.6.7-alpha",
           "description": "Docker image used to launch the Kubernetes framework on DCOS.",
           "type": "string"
         },
