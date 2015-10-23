@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "marathon-lb": {
+      "type": "object",
+      "properties": {
+        "framework-name": {
+          "default": "marathon-lb",
+          "description": "Framework Name",
+          "type": "string"
+        },
+        "cpus": {
+          "default": 0.5,
+          "description": "CPU shares to allocate to each marathon-lb instance.",
+          "minimum": 0.5,
+          "type": "number"
+        },
+        "mem": {
+          "default": 256.0,
+          "description": "Memory (MB) to allocate to each marathon-lb task.",
+          "minimum": 128.0,
+          "type": "number"
+        },
+        "instances": {
+          "default": 2,
+          "description": "Number of instances to run.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "ssl-cert": {
+          "description": "TLS Cert and private key for HTTPS.",
+          "type": "string"
+        },
+        "role": {
+          "default": "slave",
+          "description": "Deploy marathon-lb only on nodes with this role.",
+          "type": "string"
+        }
+
+      }
+    }
+  }
+}

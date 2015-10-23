@@ -1,0 +1,38 @@
+{
+  "id": "{{marathon-lb.framework-name}}",
+  "instances": {{marathon-lb.instances}},
+  "cpus": {{marathon-lb.cpus}},
+  "mem": {{marathon-lb.mem}},
+  "maintainer": "support@mesosphere.io",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "mesosphere/marathon-lb",
+      "forcePullImage": true,
+      "network": "HOST"
+    }
+  },
+  "acceptedResourceRoles": [
+    "{{marathon-lb.role}}"
+  ],
+  "constraints": [
+    ["hostname", "UNIQUE"]
+  ],
+  "healthChecks": [
+    {
+      "path": "/_haproxy_health_check",
+      "portIndex": 0,
+      "protocol": "HTTP",
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
+    }
+  ],
+  "ports": [ 80, 443 ],
+  "env": {
+    "FRAMEWORK_NAME": "{{marathon-lb.framework-name}}",
+    "HAPROXY_SSL_CERT": "{{marathon-lb.ssl-cert}}"
+  }
+}
