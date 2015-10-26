@@ -1,0 +1,14 @@
+{
+  "name": "myriad",
+  "version": "0.1.0",
+  "scm": "https://github.com/apache/incubator-myriad.git",
+  "maintainer": "dev@myriad.incubator.apache.org",
+  "description": "Myriad enables co-existence of Apache Hadoop YARN and Apache Mesos together on the same cluster and allows dynamic resource allocations across both Hadoop and other applications running on the same physical data center infrastructure.",
+  "framework": true,
+  "tags": ["mesosphere", "framework"],
+  "images": {
+    "icon-small": "https://downloads.mesosphere.io/hdfs/assets/icon-service-hdfs-small.png",
+    "icon-medium": "https://downloads.mesosphere.io/hdfs/assets/icon-service-hdfs-medium.png",
+    "icon-large": "https://downloads.mesosphere.io/hdfs/assets/icon-service-hdfs-large.png"
+  }
+}

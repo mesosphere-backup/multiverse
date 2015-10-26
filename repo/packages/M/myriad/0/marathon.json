@@ -1,0 +1,9 @@
+{
+  "id": "myriad",
+  "cpus": 1,
+  "mem": 1024,
+  "disk": 100,
+  "instances": 1,
+  "cmd": "env && sleep 10000",
+  "uris": {{{myriad/scheduler-uris}}},
+}

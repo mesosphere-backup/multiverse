@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "myriad/scheduler-uris": {
+      "description": "The URIs of the myriad tarball/cfg, which will be extracted and used to run the scheduler.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "hdfs:///myriad.tgz"
+      ]
+    }
+  }
+}
