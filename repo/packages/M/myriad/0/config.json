@@ -1,15 +1,46 @@
 {
   "type": "object",
-  "properties": {
-    "myriad/scheduler-uris": {
-      "description": "The URIs of the myriad tarball/cfg, which will be extracted and used to run the scheduler.",
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "default": [
-        "hdfs:///myriad.tgz"
-      ]
-    }
-  }
+      "properties": {
+        "myriad": {
+          "type": "object",
+          "depscription": "Myriad Mesos Framework specific properties",
+          "properties": {
+            "zk": {
+              "type": "string",
+              "description": "Zookeeper address. Specify in the format host:port.",
+              "default": "master.mesos:2181"
+            },
+            "framework-name": {
+              "type": "string",
+              "description": "Framework Instance Name.",
+              "default": "myriad"
+            },
+            "role": {
+              "type": "string",
+              "description": "Framework Role.",
+              "default": "*"
+            },
+            "url": {
+                "type": "string",
+                "description": "Myriad Mesos Framework download URL.",
+                "default": "hdfs:///myriad.tgz"
+            },
+            "instances": {
+                "type": "number",
+                "description": "Number of framework instances",
+                "default": 1
+            },
+            "cpus": {
+                "type": "number",
+                "description": "CPU requirements",
+                "default": 0.5
+            },
+            "mem": {
+                "type": "number",
+                "description": "Memory requirements",
+                "default": 2048
+            }
+          }
+        }
+      }
 }
