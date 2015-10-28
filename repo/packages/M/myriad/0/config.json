@@ -21,7 +21,7 @@
               "default": "*"
             },
             "uris": {
-              "default": [],
+              "default": ["hdfs://hdfs/myriad-hadoop.0.1.0.tar.gz"],
               "description": "Myriad Mesos Framework download URLs.",
               "items": {
                 "pattern": "^[\\s]+",
