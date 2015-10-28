@@ -4,6 +4,6 @@
   "mem": {{myriad.mem}},
   "disk": 100,
   "instances": {{myriad.instances}},,
-  "cmd": "env && sleep 10000",
+  "cmd": "./hadoop-2.7.1/sbin/yarn-daemon.sh start resourcemanager",
   "uris": {{myriad.uris}}
 }
