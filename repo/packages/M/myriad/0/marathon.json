@@ -5,5 +5,5 @@
   "disk": 100,
   "instances": {{myriad.instances}},,
   "cmd": "env && sleep 10000",
-  "uris": {{myriad.url}},
+  "uris": {{myriad.uris}}
 }

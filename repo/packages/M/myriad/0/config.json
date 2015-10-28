@@ -20,10 +20,14 @@
               "description": "Framework Role.",
               "default": "*"
             },
-            "url": {
-                "type": "string",
-                "description": "Myriad Mesos Framework download URL.",
-                "default": "hdfs:///myriad.tgz"
+            "uris": {
+              "default": [],
+              "description": "Myriad Mesos Framework download URLs.",
+              "items": {
+                "pattern": "^[\\s]+",
+                "type": "string"
+              },
+              "type": "array"
             },
             "instances": {
                 "type": "number",
