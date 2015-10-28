@@ -1,9 +1,9 @@
 {
-  "id": "myriad",
-  "cpus": 1,
-  "mem": 1024,
+  "id": "{{myriad.framework-name}}",
+  "cpus": {{myriad.cpus}},
+  "mem": {{myriad.mem}},
   "disk": 100,
-  "instances": 1,
+  "instances": {{myriad.instances}},,
   "cmd": "env && sleep 10000",
-  "uris": {{{myriad/scheduler-uris}}},
+  "uris": {{{myriad.url}}},
 }
