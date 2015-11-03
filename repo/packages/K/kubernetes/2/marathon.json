@@ -66,7 +66,7 @@
     "SCHEDULER_PORT": "{{kubernetes.scheduler-port}}",
     "SCHEDULER_DRIVER_PORT": "{{kubernetes.scheduler-driver-port}}",
     "SCHEDULER_CONTAIN_POD_RESOURCES": "false",
-    "SCHEDULER_ACCOUNT_FOR_POD_RESOURCES": "false",
+    "SCHEDULER_ACCOUNT_FOR_POD_RESOURCES": "true",
     "CONTROLLER_MANAGER_PORT": "{{kubernetes.controller-manager-port}}",
     "DEFAULT_CONTAINER_CPU_LIMIT": "{{kubernetes.default-container-cpu-limit}}",
     "DEFAULT_CONTAINER_MEM_LIMIT": "{{kubernetes.default-container-mem-limit}}",
