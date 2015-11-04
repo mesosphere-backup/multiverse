@@ -31,6 +31,7 @@
     }
   ],
   "ports": [ 80, 443 ],
+  "requirePorts": true,
   "env": {
     "FRAMEWORK_NAME": "{{marathon-lb.framework-name}}",
     "HAPROXY_SSL_CERT": "{{marathon-lb.ssl-cert}}"
