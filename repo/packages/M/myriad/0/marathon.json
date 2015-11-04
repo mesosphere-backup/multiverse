@@ -3,7 +3,7 @@
   "cpus": {{myriad.cpus}},
   "mem": {{myriad.mem}},
   "disk": 100,
-  "instances": {{myriad.instances}},,
-  "cmd": "./hadoop-2.7.1/sbin/yarn-daemon.sh start resourcemanager",
-  "uris": {{myriad.uris}}
+  "instances": {{myriad.instances}},
+  "cmd": "export JAVA_HOME=/opt/mesosphere/active/java && ./hadoop-2.7.1/sbin/yarn-daemon.sh start resourcemanager",
+  "uris": {{{myriad.uris}}}
 }
