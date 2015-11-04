@@ -1,14 +1,14 @@
 {
-  "id": {{quobyte.framework-name}},
+  "id": "{{quobyte.framework-name}}",
   "cpus": {{quobyte.cpus}},
   "mem": {{quobyte.mem}},
   "instances": {{quobyte.instances}},
   "args": [
-    {{quobyte.zk}},
-    {{mesos.master}},
-    {{quobyte.port}},
-    {{quobyte.docker_image}},
-    {{quobyte.mesos-dns_domain}}
+    "{{quobyte.zk}}",
+    "{{mesos.master}}",
+    "{{quobyte.port}}",
+    "{{quobyte.docker_image}}",
+    "{{quobyte.mesos-dns_domain}}"
     ],
   "env":{
     "LD_LIBRARY_PATH": "/opt:$LD_LIBRARY_PATH"
