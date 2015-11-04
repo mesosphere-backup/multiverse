@@ -88,16 +88,19 @@
       }
     },
     {
-      "currentVersion":"1.596.2",
-      "description":"Jenkins is an award-winning application that monitors executions of repeated jobs, such as building a software project or jobs run by cron.",
+      "currentVersion":"0.1.0",
+      "description":"Jenkins is an award-winning, cross-platform, continuous integration and continuous delivery application that increases your productivity. Use Jenkins to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build. It also allows you to continuously deliver your software by providing powerful ways to define your build pipelines and integrating with a large number of testing and deployment technologies.",
       "framework":true,
       "name":"jenkins",
       "tags":[
+        "mesosphere",
         "framework",
-        "continuous-integration"
+        "continuous-integration",
+        "ci",
+        "jenkins"
       ],
       "versions":{
-        "1.596.2":"0"
+        "0.1.0":"0"
       }
     },
     {
@@ -132,6 +135,20 @@
       ],
       "versions":{
         "0.0.0-0.1":"0"
+      }
+    },
+    {
+      "currentVersion":"0.0.1",
+      "description":"MemSQL running on Apache Mesos. This framework provides the ability to create and manage a set of MemSQL clusters, each running with the MemSQL Ops management tool.",
+      "framework":true,
+      "name":"memsql",
+      "tags":[
+        "mysql",
+        "database",
+        "rdbms"
+      ],
+      "versions":{
+        "0.0.1":"0"
       }
     },
     {
