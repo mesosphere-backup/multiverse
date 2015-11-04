@@ -1,14 +1,14 @@
 {
-  "id": {{quobyte.framework-name}},
-  "cpus": {{quobyte.cpus}},
-  "mem": {{quobyte.mem}},
-  "instances": {{quobyte.instances}},
+  "id": "{{quobyte.framework-name}}",
+  "cpus": "{{quobyte.cpus}}",
+  "mem": "{{quobyte.mem}}",
+  "instances": "{{quobyte.instances}}",
   "args": [
-    {{quobyte.zk}},
-    {{mesos.master}},
-    {{quobyte.port}},
-    {{quobyte.docker_image}},
-    {{quobyte.mesos-dns_domain}}
+    "{{quobyte.zk}}",
+    "{{mesos.master}}",
+    "{{quobyte.port}}",
+    "{{quobyte.docker_image}}",
+    "{{quobyte.mesos-dns_domain}}"
     ],
   "env":{
     "LD_LIBRARY_PATH": "/opt:$LD_LIBRARY_PATH"
@@ -20,9 +20,9 @@
       "network": "BRIDGE",
       "portMappings": [
         {
-          "containerPort": {{quobyte.port}},
-          "hostPort": {{quobyte.port}},
-          "servicePort": {{quobyte.port}},
+          "containerPort": "{{quobyte.port}}",
+          "hostPort": "{{quobyte.port}}",
+          "servicePort": "{{quobyte.port}}",
           "protocol": "tcp"
         }
       ]
