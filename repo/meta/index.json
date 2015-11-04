@@ -138,6 +138,20 @@
       }
     },
     {
+      "currentVersion":"0.0.1",
+      "description":"MemSQL running on Apache Mesos. This framework provides the ability to create and manage a set of MemSQL clusters, each running with the MemSQL Ops management tool.",
+      "framework":true,
+      "name":"memsql",
+      "tags":[
+        "mysql",
+        "database",
+        "rdbms"
+      ],
+      "versions":{
+        "0.0.1":"0"
+      }
+    },
+    {
       "currentVersion":"0.1.1",
       "description":"A distributed NoSQL key-value data store that offers high availability, fault tolerance, operational simplicity, and scalability.",
       "framework":true,
