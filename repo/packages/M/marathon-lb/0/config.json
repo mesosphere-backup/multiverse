@@ -23,7 +23,7 @@
           "type": "number"
         },
         "instances": {
-          "default": 2,
+          "default": 1,
           "description": "Number of instances to run.",
           "minimum": 1,
           "type": "integer"
@@ -33,7 +33,7 @@
           "type": "string"
         },
         "role": {
-          "default": "slave",
+          "default": null,
           "description": "Deploy marathon-lb only on nodes with this role.",
           "type": "string"
         }
