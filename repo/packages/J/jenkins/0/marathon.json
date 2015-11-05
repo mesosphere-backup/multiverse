@@ -1,12 +1,12 @@
 {
-  "id": "{{jenkins.framework-name}}",
+  "id": "{{jenkins.framework_name}}",
   "cpus": {{jenkins.cpus}},
   "mem": {{jenkins.mem}},
   "instances": 1,
   "env": {
       "CATALINA_OPTS": "{{jenkins.catalina_opts}}",
-      "JENKINS_FRAMEWORK_NAME": "{{jenkins.framework-name}}",
-      "JENKINS_CONTEXT": "/service/{{jenkins.framework-name}}",
+      "JENKINS_FRAMEWORK_NAME": "{{jenkins.framework_name}}",
+      "JENKINS_CONTEXT": "/service/{{jenkins.framework_name}}",
       "LD_LIBRARY_PATH": "/opt/mesosphere/lib"
   },
    "container": {
@@ -18,7 +18,7 @@
        "volumes": [
            {
                "containerPath": "/var/jenkins_home",
-               "hostPath": "{{jenkins.host_volume}}/{{jenkins.framework-name}}",
+               "hostPath": "{{jenkins.host_volume}}/{{jenkins.framework_name}}",
                "mode": "RW"
            },
            {
@@ -30,7 +30,7 @@
    },
    "healthChecks": [
     {
-      "path": "/service/{{jenkins.framework-name}}",
+      "path": "/service/{{jenkins.framework_name}}",
       "portIndex": 0,
       "protocol": "HTTP",
       "gracePeriodSeconds": 30,
