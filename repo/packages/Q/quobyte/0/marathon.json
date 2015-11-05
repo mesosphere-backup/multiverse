@@ -3,15 +3,13 @@
   "cpus": {{quobyte.cpus}},
   "mem": {{quobyte.mem}},
   "instances": {{quobyte.instances}},
-  "args": [
-    "--zk", "{{quobyte.zk}}",
-    "--master", "{{mesos.master}}",
-    "--port", "{{quobyte.port}}",
-    "--docker_image", "{{quobyte.docker_image}}",
-    "--mesos_dns_domain", "{{quobyte.mesos-dns_domain}}"
-    ],
+  "args": [],
   "env":{
-    "LD_LIBRARY_PATH": "/opt:$LD_LIBRARY_PATH"
+    "ZOOKEEPER": "{{quobyte.zk}}",
+    "MESOS_MASTER":"{{mesos.master}}",
+    "PORT": "{{quobyte.port}}",
+    "DOCKER_IMAGE": "{{quobyte.docker_image}}",
+    "MESOS_DNS_DOMAIN": "{{quobyte.mesos-dns_domain}}"
     },
   "container": {
     "type": "DOCKER",
