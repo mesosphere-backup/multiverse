@@ -5,9 +5,9 @@
   "description": "HAProxy configured from marathon state",
   "maintainer": "support@mesosphere.io",
   "images": {
-    "icon-small": "https://downloads.mesosphere.io/marathon/assets/icon-service-marathon-small.png",
-    "icon-medium": "https://downloads.mesosphere.io/marathon/assets/icon-service-marathon-medium.png",
-    "icon-large": "https://downloads.mesosphere.io/marathon/assets/icon-service-marathon-large.png"
+    "icon-small": "https://downloads.mesosphere.com/marathon/assets/icon-service-marathon-small.png",
+    "icon-medium": "https://downloads.mesosphere.com/marathon/assets/icon-service-marathon-medium.png",
+    "icon-large": "https://downloads.mesosphere.com/marathon/assets/icon-service-marathon-large.png"
   },
   "tags": ["loadbalancer", "service-discovery", "reverse-proxy", "proxy", "haproxy"],
   "preInstallNotes": "We recommend a minimum of 0.5 CPUs and 256 MB of RAM available for the Marathon Service.",

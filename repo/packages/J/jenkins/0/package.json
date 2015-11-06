@@ -11,9 +11,9 @@
   "postInstallNotes": "Jenkins has been installed.",
   "postUninstallNotes": "Jenkins has been uninstalled. Note that any data persisted to a NFS share still exists and will need to be manually removed.",
   "images": {
-    "icon-small": "https://downloads.mesosphere.io/jenkins/assets/icon-service-jenkins-small.png",
-    "icon-medium": "https://downloads.mesosphere.io/jenkins/assets/icon-service-jenkins-medium.png",
-    "icon-large": "https://downloads.mesosphere.io/jenkins/assets/icon-service-jenkins-large.png"
+    "icon-small": "https://downloads.mesosphere.com/jenkins/assets/icon-service-jenkins-small.png",
+    "icon-medium": "https://downloads.mesosphere.com/jenkins/assets/icon-service-jenkins-medium.png",
+    "icon-large": "https://downloads.mesosphere.com/jenkins/assets/icon-service-jenkins-large.png"
   },
   "licenses": [
     {
