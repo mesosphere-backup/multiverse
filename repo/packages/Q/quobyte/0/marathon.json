@@ -15,6 +15,7 @@
     "type": "DOCKER",
     "docker": {
       "image": "quobyte/quobyte-mesos",
+      "forcePullImage": true,
       "network": "BRIDGE",
       "portMappings": [
         {
