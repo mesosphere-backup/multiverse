@@ -7,9 +7,9 @@
   "framework": true,
   "tags": ["mesosphere", "framework", "docker"],
   "images": {
-    "icon-small": "https://downloads.mesosphere.io/swarm/assets/icon-service-swarm-large.png",
-    "icon-medium": "https://downloads.mesosphere.io/swarm/assets/icon-service-swarm-large.png",
-    "icon-large": "https://downloads.mesosphere.io/swarm/assets/icon-service-swarm-large.png"
+    "icon-small": "https://downloads.mesosphere.com/swarm/assets/icon-service-swarm-large.png",
+    "icon-medium": "https://downloads.mesosphere.com/swarm/assets/icon-service-swarm-large.png",
+    "icon-large": "https://downloads.mesosphere.com/swarm/assets/icon-service-swarm-large.png"
   },
   "postInstallNotes": "Swarm is installed in your cluster. Please `eval $(dcos swarm env)` to set DOCKER_HOST environment variable and use your docker client to interact with swarm.",
   "preInstallNotes": "Note that the Docker Swarm DCOS Service is beta and there may be bugs, incomplete features, incorrect documentation or other discrepancies.",
