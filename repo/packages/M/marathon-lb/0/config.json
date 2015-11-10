@@ -1,26 +1,23 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "type": "object",
   "properties": {
     "marathon-lb": {
-      "type": "object",
       "properties": {
-        "framework-name": {
-          "default": "marathon-lb",
-          "description": "Framework Name",
-          "type": "string"
-        },
         "cpus": {
           "default": 0.5,
           "description": "CPU shares to allocate to each marathon-lb instance.",
           "minimum": 0.5,
           "type": "number"
         },
-        "mem": {
-          "default": 256.0,
-          "description": "Memory (MB) to allocate to each marathon-lb task.",
-          "minimum": 128.0,
-          "type": "number"
+        "docker-image": {
+          "default": "mesosphere/marathon-lb",
+          "description": "Docker container image for marathon-lb.",
+          "type": "string"
+        },
+        "framework-name": {
+          "default": "marathon-lb",
+          "description": "Framework Name",
+          "type": "string"
         },
         "instances": {
           "default": 1,
@@ -28,17 +25,24 @@
           "minimum": 1,
           "type": "integer"
         },
+        "mem": {
+          "default": 256.0,
+          "description": "Memory (MB) to allocate to each marathon-lb task.",
+          "minimum": 128.0,
+          "type": "number"
+        },
+        "role": {
+          "default": "slave_public",
+          "description": "Deploy marathon-lb only on nodes with this role.",
+          "type": "string"
+        },
         "ssl-cert": {
           "description": "TLS Cert and private key for HTTPS.",
           "type": "string"
-        },
-        "role": {
-          "default": null,
-          "description": "Deploy marathon-lb only on nodes with this role.",
-          "type": "string"
         }
-
-      }
+      },
+      "type": "object"
     }
-  }
+  },
+  "type": "object"
 }
