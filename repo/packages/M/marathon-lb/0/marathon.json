@@ -7,7 +7,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "mesosphere/marathon-lb",
+      "image": "{{marathon-lb.docker-image}}",
       "forcePullImage": true,
       "network": "HOST"
     }
