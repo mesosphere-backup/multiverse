@@ -60,7 +60,7 @@
     },
     {
       "currentVersion":"0.1.0",
-      "description":"Example DCOS application package",
+      "description":"Example DCOS application package.",
       "framework":false,
       "name":"helloworld",
       "tags":[
