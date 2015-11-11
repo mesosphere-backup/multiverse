@@ -1,4 +1,4 @@
-# Mesosphere Multiverse
+# Mesosphere Multiverse [![Build Status](https://teamcity.mesosphere.io/guestAuth/app/rest/builds/buildType:(id:Oss_Multiverse_Ci)/statusIcon)](https://teamcity.mesosphere.io/viewType.html?buildTypeId=Oss_Multiverse_Ci&guest=1)
 
 The DCOS package repository for experimental packages.
 
