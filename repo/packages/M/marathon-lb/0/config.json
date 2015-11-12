@@ -39,6 +39,11 @@
         "ssl-cert": {
           "description": "TLS Cert and private key for HTTPS.",
           "type": "string"
+        },
+        "template-url": {
+          "default": "",
+          "description": "URL to tarball containing a directory templates/ to customize haproxy config.",
+          "type": "string"
         }
       },
       "type": "object"
