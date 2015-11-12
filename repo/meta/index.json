@@ -201,6 +201,20 @@
       }
     },
     {
+      "currentVersion":"0.1.0",
+      "description":"Storm is a stream processing framework.",
+      "framework":true,
+      "name":"storm",
+      "tags":[
+        "mesosphere",
+        "framework",
+        "storm"
+      ],
+      "versions":{
+        "0.1.0":"0"
+      }
+    },
+    {
       "currentVersion":"0.4.0",
       "description":"Swarm is a Docker-native clustering system.",
       "framework":true,
