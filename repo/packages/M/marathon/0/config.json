@@ -61,7 +61,7 @@
       "required" : [ "heap-min", "heap-max" ],
       "type" : "object"
     },
-    "commandLine" : {
+    "command-line" : {
       "additionalProperties" : true,
       "description" : "Marathon command line flags. These are the same flags that are passed through to Marathon when launching manually from the command line. See details here: https://mesosphere.github.io/marathon/docs/command-line-flags.html",
       "properties" : {
@@ -115,7 +115,7 @@
           "default" : "//cmd"
         },
         "failover-timeout" : {
-          "description" : "The failover_timeout for mesos in seconds (default: 1 week).",
+          "description" : "(Default: 1 week) The failover_timeout for mesos in seconds.",
           "type" : "integer",
           "default" : 604800
         },
@@ -349,7 +349,7 @@
           "default" : true
         },
         "zk-compression-threshold" : {
-          "description" : "Threshold in bytes, when compression is applied to the zk node (Default: 64 KB).",
+          "description" : "(Default: 64 KB) Threshold in bytes, when compression is applied to the zk node.",
           "type" : "integer",
           "default" : 65536
         },
@@ -373,6 +373,6 @@
       "type" : "object"
     }
   },
-  "required" : [ "marathon", "jvm", "commandLine" ],
+  "required" : [ "marathon", "jvm", "command-line" ],
   "type" : "object"
 }
