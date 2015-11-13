@@ -88,7 +88,7 @@
           "default" : 120000
         },
         "default-accepted-resource-roles" : {
-          "description" : "Default for the defaultAcceptedResourceRoles attribute of all app definitions as a comma-separated list of strings.This defaults to all roles for which this Marathon instance is configured to receive offers.",
+          "description" : "Default for the defaultAcceptedResourceRoles attribute of all app definitions as a comma-separated list of strings. This defaults to all roles for which this Marathon instance is configured to receive offers.",
           "type" : "string"
         },
         "disable-http" : {
