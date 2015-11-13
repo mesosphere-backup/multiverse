@@ -97,7 +97,7 @@
           "default" : false
         },
         "env-vars-prefix" : {
-          "description" : "Prefix to use for environment variables.",
+          "description" : "Prefix to use for environment variables injected automatically into all started tasks.",
           "type" : "string"
         },
         "event-stream-max-outstanding-messages" : {
@@ -110,7 +110,7 @@
           "type" : "string"
         },
         "executor" : {
-          "description" : "Executor to use when none is specified. If not defined the mesos command executor is used by default.",
+          "description" : "Executor to use when none is specified. If not defined the Mesos command executor is used by default.",
           "type" : "string",
           "default" : "//cmd"
         },
@@ -130,7 +130,7 @@
           "default" : true
         },
         "hostname" : {
-          "description" : "The advertised hostname that is used for the communication with the mesos master. The value is also stored in the persistent store so another standby host can redirect to the elected leader.",
+          "description" : "The advertised hostname that is used for the communication with the Mesos master. The value is also stored in the persistent store so another standby host can redirect to the elected leader.",
           "type" : "string"
         },
         "http-address" : {
@@ -142,11 +142,11 @@
           "type" : "string"
         },
         "http-endpoints" : {
-          "description" : "The URLs of the event endpoints.",
+          "description" : "The URLs of the event endpoints added to the current list of subscribers on startup. You can manage this list during runtime by using the /v2/eventSubscriptions API endpoint.",
           "type" : "string"
         },
         "http-max-concurrent-requests" : {
-          "description" : "The number of concurrent HTTP requests, that are allowed before rejecting.",
+          "description" : "The number of concurrent HTTP requests that are allowed before rejecting.",
           "type" : "integer"
         },
         "http-port" : {
@@ -336,7 +336,7 @@
           "default" : false
         },
         "webui-url" : {
-          "description" : "The http(s) url of the web ui, defaulting to the advertised hostname.",
+          "description" : "The HTTP(S) url of the web ui, defaulting to the advertised hostname.",
           "type" : "string"
         },
         "zk" : {
@@ -349,7 +349,7 @@
           "default" : true
         },
         "zk-compression-threshold" : {
-          "description" : "(Default: 64 KB) Threshold in bytes, when compression is applied to the zk node.",
+          "description" : "(Default: 64 KB) Threshold in bytes, when compression is applied to the ZooKeeper node.",
           "type" : "integer",
           "default" : 65536
         },
@@ -359,12 +359,12 @@
           "default" : 25
         },
         "zk-session-timeout" : {
-          "description" : "The timeout for Zookeeper sessions in milliseconds",
+          "description" : "The timeout for ZooKeeper sessions in milliseconds",
           "type" : "integer",
           "default" : 10000
         },
         "zk-timeout" : {
-          "description" : "The timeout for ZooKeeper in milliseconds",
+          "description" : "The timeout for ZooKeeper in milliseconds.",
           "type" : "integer",
           "default" : 10000
         }
