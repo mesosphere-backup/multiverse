@@ -30,7 +30,7 @@
         },
         "uris" : {
           "default" : [ ],
-          "description" : "List of URIs that will be download and made available in the current working directory of Marathon. For example this can be used to download a Java keystore file for SSL configuration.",
+          "description" : "List of URIs that will be downloaded and made available in the current working directory of Marathon. For example this can be used to download a Java keystore file for SSL configuration.",
           "items" : {
             "pattern" : "^[\\s]+",
             "type" : "string"
@@ -122,7 +122,7 @@
         "framework-name" : {
           "description" : "Framework name to register with Mesos.",
           "type" : "string",
-          "default" : "marathon"
+          "default" : "marathon-user"
         },
         "ha" : {
           "description" : "Enabled: (Default) Run Marathon in HA mode with leader election. Allows starting an arbitrary number of other Marathons but all need to be started in HA mode. This mode requires a running ZooKeeper Disabled: Run Marathon in single node mode.",
@@ -208,7 +208,8 @@
         },
         "master" : {
           "description" : "The URL of the Mesos master",
-          "type" : "string"
+          "type" : "string",
+          "default" : "zk://master.mesos:2181/mesos"
         },
         "max-apps" : {
           "description" : "The maximum number of applications that may be created.",
@@ -238,8 +239,7 @@
         },
         "mesos-user" : {
           "description" : "Mesos user for this framework.",
-          "type" : "string",
-          "default" : "matthias"
+          "type" : "string"
         },
         "metrics" : {
           "description" : "Enabled: (Default) Enable metric measurement of service method calls. Disabled: Disable metric measurement of service method calls.",
