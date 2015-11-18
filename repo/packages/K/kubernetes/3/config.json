@@ -181,6 +181,12 @@
           "description": "Enable debug output",
           "type": "boolean"
         }
+        "proxy-mode": {
+          "default": "userspace",
+          "description": "Which proxy mode to use: 'userspace' (older) or 'iptables' (faster). If the iptables proxy is selected, regardless of how, but the system's kernel or iptables versions are insufficient, this always falls back to the userspace proxy.",
+          "type": "string",
+          "pattern": "^(userspace|iptables)$"
+        },
       },
       "required": [
         "etcd-mesos-framework-name",
