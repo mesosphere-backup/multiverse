@@ -60,7 +60,7 @@
     {{/kubernetes.scheduler-service-ip}}
 
     "K8SM_FAILOVER_TIMEOUT": "{{kubernetes.failover-timeout}}",
-    "K8SM_PROXY_MODE": "{{kubernetes.proxy-mode}}",
+    "PROXY_MODE": "{{kubernetes.proxy-mode}}",
     "APISERVER_PORT": "{{kubernetes.apiserver-port}}",
     "APISERVER_PROXY_PORT": "{{kubernetes.apiserver-proxy-port}}",
     "APISERVER_SECURE_PORT": "{{kubernetes.apiserver-secure-port}}",
