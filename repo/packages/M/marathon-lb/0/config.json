@@ -3,10 +3,15 @@
   "properties": {
     "marathon-lb": {
       "properties": {
+        "bind-http-https": {
+          "default": true,
+          "description": "Reserve ports 80 and 443 for the LB. Use this if you intend to use virtual hosts.",
+          "type": "boolean"
+        },
         "cpus": {
-          "default": 0.5,
+          "default": 1,
           "description": "CPU shares to allocate to each marathon-lb instance.",
-          "minimum": 0.5,
+          "minimum": 1,
           "type": "number"
         },
         "docker-image": {
@@ -14,9 +19,9 @@
           "description": "Docker container image for marathon-lb.",
           "type": "string"
         },
-        "framework-name": {
-          "default": "marathon-lb",
-          "description": "Framework Name",
+        "haproxy-group": {
+          "default": "external",
+          "description": "HAProxy group parameter. Matches with HAPROXY_GROUP in the app labels.",
           "type": "string"
         },
         "instances": {
@@ -28,8 +33,13 @@
         "mem": {
           "default": 256.0,
           "description": "Memory (MB) to allocate to each marathon-lb task.",
-          "minimum": 128.0,
+          "minimum": 256.0,
           "type": "number"
+        },
+        "name": {
+          "default": "marathon-lb",
+          "description": "Name for this LB instance",
+          "type": "string"
         },
         "role": {
           "default": "slave_public",
