@@ -24,7 +24,7 @@
     {
       "path": "/_haproxy_health_check",
   {{#marathon-lb.bind-http-https}}
-      "portIndex": 3,
+      "portIndex": 2,
   {{/marathon-lb.bind-http-https}}
   {{^marathon-lb.bind-http-https}}
       "portIndex": 0,
