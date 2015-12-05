@@ -64,6 +64,7 @@
     "APISERVER_PORT": "{{kubernetes.apiserver-port}}",
     "APISERVER_PROXY_PORT": "{{kubernetes.apiserver-proxy-port}}",
     "APISERVER_SECURE_PORT": "{{kubernetes.apiserver-secure-port}}",
+    "APISERVER_RUNTIME_CONFIG": "{{kubernetes.apiserver-runtime-config}}",
     "SCHEDULER_PORT": "{{kubernetes.scheduler-port}}",
     "SCHEDULER_DRIVER_PORT": "{{kubernetes.scheduler-driver-port}}",
     "SCHEDULER_CONTAIN_POD_RESOURCES": "false",

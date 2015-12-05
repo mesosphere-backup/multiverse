@@ -99,6 +99,11 @@
           "maximum": 65535,
           "type": "integer"
         },
+        "apiserver-runtime-config": {
+          "default": "",
+          "description": "A set of key=value pairs that describe runtime configuration that may be passed to apiserver. apis/<groupVersion> key can be used to turn on/off specific api versions. apis/<groupVersion>/<resource> can be used to turn on/off specific resources. api/all and api/legacy are special keys to control all and legacy api versions respectively.",
+          "type": "string"
+        },
         "scheduler-driver-port": {
           "default": 25501,
           "description": "Host port that the Kubernetes-Mesos scheduler driver listens on.",
