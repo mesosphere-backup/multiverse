@@ -4,7 +4,7 @@
       "description": "Kubernetes specific configuration properties",
       "properties": {
         "docker-image": {
-          "default": "mesosphere/kubernetes:v0.7.0-v1.1.1-alpha",
+          "default": "mesosphere/kubernetes:v0.7.0-3-g952ec33-v1.1.1-alpha",
           "description": "Docker image used to launch the Kubernetes framework on DCOS.",
           "type": "string"
         },
@@ -98,6 +98,11 @@
           "minimum": 1,
           "maximum": 65535,
           "type": "integer"
+        },
+        "apiserver-runtime-config": {
+          "default": "",
+          "description": "A set of key=value pairs that describe runtime configuration that may be passed to apiserver. apis/<groupVersion> key can be used to turn on/off specific api versions. apis/<groupVersion>/<resource> can be used to turn on/off specific resources. api/all and api/legacy are special keys to control all and legacy api versions respectively.",
+          "type": "string"
         },
         "scheduler-driver-port": {
           "default": 25501,

@@ -1,6 +1,6 @@
 {
   "name": "kubernetes",
-  "version": "v0.7.0-v1.1.1-alpha",
+  "version": "v0.7.0-3-g952ec33-v1.1.1-alpha",
   "scm": "https://github.com/mesosphere/kubernetes-mesos",
   "maintainer": "support@mesosphere.io",
   "description": "Kubernetes is an open source system for managing containerized applications across multiple hosts, providing basic mechanisms for deployment, maintenance, and scaling of applications.",
