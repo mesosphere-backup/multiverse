@@ -126,7 +126,7 @@
       }
     },
     {
-      "currentVersion":"0.13.0-RC3",
+      "currentVersion":"0.14.0-RC1",
       "description":"A cluster-wide init and control system for services in cgroups or Docker containers.",
       "framework":true,
       "name":"marathon",
@@ -135,7 +135,8 @@
         "long-running"
       ],
       "versions":{
-        "0.13.0-RC3":"0"
+        "0.13.0-RC3":"0",
+        "0.14.0-RC1":"1"
       }
     },
     {
