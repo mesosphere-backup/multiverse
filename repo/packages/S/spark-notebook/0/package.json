@@ -1,6 +1,6 @@
 {
   "name": "spark-notebook",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "website": "http://spark-notebook.io",
   "scm": "https://github.com/andypetrella/spark-notebook/",
   "maintainer": "noootsab@data-fellas.guru",
@@ -8,5 +8,5 @@
   "framework": true,
   "preInstallNotes": "",
   "postInstallNotes": "Yeah Spark Notebook is in da place!",
-  "tags": [ "spark", "notebook", "spark-notebook", "interactive", "big-data", "bigdata", "apachespark", "datafellas", "data-fellas" ]
+  "tags": [ "spark", "notebook", "spark-notebook", "interactive", "bigdata", "apachespark", "data-fellas" ]
 }
