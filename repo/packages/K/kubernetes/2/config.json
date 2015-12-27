@@ -4,7 +4,7 @@
       "description": "Kubernetes specific configuration properties",
       "properties": {
         "docker-image": {
-          "default": "mesosphere/kubernetes:v1.0.6-v0.6.7-alpha",
+          "default": "mesosphere/kubernetes:v1.0.6-v0.6.5-alpha",
           "description": "Docker image used to launch the Kubernetes framework on DCOS.",
           "type": "string"
         },
@@ -18,12 +18,6 @@
           "default": true,
           "description": "Set to true to enable Kubernetes local DNS services, allows pods to locate services by name.",
           "type": "boolean"
-        },
-        "etcd-mesos-framework-name": {
-          "default": "disabled",
-          "description": "Which etcd-mesos framework to rely on. Corresponds to the configured framework-name for an etcd-mesos framework. Set this to disabled to use a local etcd instance in the scheduler container.",
-          "type": "string",
-          "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
         },
         "framework-name": {
           "default": "kubernetes",
@@ -66,6 +60,15 @@
           "type": "string",
           "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
         },
+        "enable-etcd-server": {
+          "default": true,
+          "description": "Set to false to disable the pre-packaged etcd server component. Do this if you already have an etcd cluster set up that you want to use as the backing store for Kubernetes. Also see the docs for etcd-server-list.",
+          "type": "boolean"
+        },
+        "etcd-server-list": {
+          "description": "Comma-delimited list of URLs that reference etcd-server endpoints. For example, http://myserver:2001,http://anotherserver:2001. Specify this option if you have disabled the built-in etcd-server via disable-etcd-server.",
+          "type": "string"
+        },
         "cpus": {
           "default": 1.0,
           "description": "CPU shares to allocate to each instance.",
@@ -73,21 +76,14 @@
           "type": "number"
         },
         "failover-timeout": {
-          "default": 604800,
+          "default": 120,
           "description": "The failover_timeout for Mesos in seconds. If a new Kubernetes scheduler instance has not re-registered with Mesos this long after a failover, Mesos will shut down all running pods. Requires checkpointing to be enabled.",
           "minimum": 0,
           "type": "integer"
         },
         "apiserver-port": {
-          "default": 25503,
-          "description": "Read/write host port that the Kubernetes apiserver listens on.",
-          "minimum": 1,
-          "maximum": 65535,
-          "type": "integer"
-        },
-        "apiserver-proxy-port": {
           "default": 25500,
-          "description": "Read/write host port that the Kubernetes nginx proxy in front of the apiserver listens on.",
+          "description": "Read/write host port that the Kubernetes apiserver listens on.",
           "minimum": 1,
           "maximum": 65535,
           "type": "integer"
@@ -141,13 +137,13 @@
         },
         "default-container-cpu-limit": {
           "default": 0.25,
-          "description": "CPU shared to allocate to a container in a pod which is not CPU limited.",
+          "description": "CPU shared to allocate to a containter in a pod which is not CPU limited.",
           "minimum": 0.01,
           "type": "number"
         },
         "default-container-mem-limit": {
           "default": 64.0,
-          "description": "Memory (MB) to allocate to a container in a pod which is not memory limited.",
+          "description": "Memory (MB) to allocate to a containter in a pod which is not memory limited.",
           "minimum": 32.0,
           "type": "number"
         },
@@ -171,7 +167,7 @@
           "default": [],
           "description": "List of URIs that will be download and made available in the current working directory of the scheduler.",
           "items": {
-            "pattern": "^[^\\s]+",
+            "pattern": "^[\\s]+",
             "type": "string"
           },
           "type": "array"
@@ -183,7 +179,6 @@
         }
       },
       "required": [
-        "etcd-mesos-framework-name",
         "framework-name",
         "cpus",
         "dns-suffix",
@@ -195,29 +190,8 @@
       ],
       "type": "object"
     },
-    "marathon": {
-      "description": "Marathon specific configuration properties",
-      "properties": {
-        "labels": {
-          "default": {},
-          "description": "Set of labels to be applied to the Kubernetes Marathon application instance.",
-          "type": "object"
-        },
-        "resource-roles": {
-          "default": ["*"],
-          "description": "List of acceptable Mesos resource roles to consider when scheduling the Kubernetes Marathon container. Set to ['slave_public'] to force running Kubernetes on a public slave.",
-          "items": {
-            "pattern": "^[^\\s]+$",
-            "type": "string"
-          },
-          "type": "array"
-        }
-      },
-      "required": ["labels","resource-roles"],
-      "type": "object"
-    },
     "mesos": {
-      "description": "Mesos specific configuration properties",
+      "depscription": "Mesos specific configuration properties",
       "properties": {
         "master": {
           "default": "zk://master.mesos:2181/mesos",
@@ -231,7 +205,6 @@
   },
   "required": [
     "kubernetes",
-    "marathon",
     "mesos"
   ],
   "type": "object"

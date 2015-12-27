@@ -2,8 +2,6 @@
   "id": "{{kubernetes.framework-name}}",
   "cpus": {{kubernetes.cpus}},
   "mem": {{kubernetes.mem}},
-  "acceptedResourceRoles": {{{marathon.resource-roles}}},
-  "labels": {{{marathon.labels}}},
   "container": {
     "type": "DOCKER",
     "docker": {
@@ -17,7 +15,7 @@
     "GLOG_v": "{{kubernetes.logging-verbosity}}",
     "DEFAULT_DNS_NAME": "{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}",
     "FRAMEWORK_NAME": "{{kubernetes.framework-name}}",
-    "FRAMEWORK_WEBURI": "http://{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}:{{kubernetes.apiserver-proxy-port}}",
+    "FRAMEWORK_WEBURI": "http://{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}:{{kubernetes.apiserver-port}}",
 
     {{#mesos.master}}
     "K8SM_MESOS_MASTER": "{{mesos.master}}",
@@ -27,9 +25,13 @@
     "K8SM_MESOS_ROLE": "{{kubernetes.mesos-role}}",
     {{/kubernetes.mesos-role}}
 
-    {{#kubernetes.etcd-mesos-framework-name}}
-    "ETCD_MESOS_FRAMEWORK_NAME": "{{kubernetes.etcd-mesos-framework-name}}",
-    {{/kubernetes.etcd-mesos-framework-name}}
+    {{#kubernetes.enable-etcd-server}}
+    "ENABLE_ETCD_SERVER": "{{kubernetes.enable-etcd-server}}",
+    {{/kubernetes.enable-etcd-server}}
+
+    {{#kubernetes.etcd-server-list}}
+    "ETCD_SERVER_LIST": "{{kubernetes.etcd-server-list}}",
+    {{/kubernetes.etcd-server-list}}
 
     {{#kubernetes.enable-dns}}
     "ENABLE_DNS": "{{kubernetes.enable-dns}}",
@@ -61,19 +63,18 @@
 
     "K8SM_FAILOVER_TIMEOUT": "{{kubernetes.failover-timeout}}",
     "APISERVER_PORT": "{{kubernetes.apiserver-port}}",
-    "APISERVER_PROXY_PORT": "{{kubernetes.apiserver-proxy-port}}",
     "APISERVER_SECURE_PORT": "{{kubernetes.apiserver-secure-port}}",
     "SCHEDULER_PORT": "{{kubernetes.scheduler-port}}",
     "SCHEDULER_DRIVER_PORT": "{{kubernetes.scheduler-driver-port}}",
     "SCHEDULER_CONTAIN_POD_RESOURCES": "false",
-    "SCHEDULER_ACCOUNT_FOR_POD_RESOURCES": "true",
+    "SCHEDULER_ACCOUNT_FOR_POD_RESOURCES": "false",
     "CONTROLLER_MANAGER_PORT": "{{kubernetes.controller-manager-port}}",
     "DEFAULT_CONTAINER_CPU_LIMIT": "{{kubernetes.default-container-cpu-limit}}",
     "DEFAULT_CONTAINER_MEM_LIMIT": "{{kubernetes.default-container-mem-limit}}",
     "SCHEDULER_MESOS_EXECUTOR_CPUS": "{{kubernetes.initial-executor-cpus}}",
     "SCHEDULER_MESOS_EXECUTOR_MEM": "{{kubernetes.initial-executor-mem}}"
   },
-  "ports": [{{kubernetes.apiserver-proxy-port}},{{kubernetes.apiserver-port}}, {{kubernetes.apiserver-secure-port}}, {{kubernetes.scheduler-port}}, {{kubernetes.controller-manager-port}}, {{kubernetes.scheduler-driver-port}}],
+  "ports": [{{kubernetes.apiserver-port}}, {{kubernetes.apiserver-secure-port}}, {{kubernetes.scheduler-port}}, {{kubernetes.controller-manager-port}}, {{kubernetes.scheduler-driver-port}}],
   "requirePorts": true,
   "upgradeStrategy":{
     "minimumHealthCapacity": 0,
