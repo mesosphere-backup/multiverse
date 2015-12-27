@@ -3,7 +3,7 @@
   "cpus": 0.5,
   "mem": 4000,
   "instances": 1,
-  "cmd": "JAVA_HOME=$(pwd)/jre1.7.0_76 && PATH=$PATH:$(pwd)/jre1.7.0_76/bin && cd spark-notebook-0.6.2-scala-2.10.4-spark-1.5.0-hadoop-2.5.0-cdh5.3.3-with-hive-with-parquet && ./bin/spark-notebook -v -Dmanager.tachyon.enabled=false -Dhttp.port=PORT0 -J-Xms4000m -J-Xmx4000m -Dmanager.notebooks.override.sparkConf.spark.mesos.executor.docker.image=\"mesosphere/1.5.0-multi-roles-v2-bin-2.4.0\" -Dmanager.notebooks.override.sparkConf.spark.master=\"mesos://master.mesos:2181\"",
+  "cmd": "JAVA_HOME=$(pwd)/jre1.7.0_76 && PATH=$PATH:$(pwd)/jre1.7.0_76/bin && cd spark-notebook-0.6.2-scala-2.10.4-spark-1.5.0-hadoop-2.5.0-cdh5.3.3-with-hive-with-parquet && ./bin/spark-notebook -v -Dmanager.tachyon.enabled=false -Dhttp.port=$PORT0 -J-Xms4000m -J-Xmx4000m -Dmanager.notebooks.override.sparkConf.spark.mesos.executor.docker.image=\"mesosphere/1.5.0-multi-roles-v2-bin-2.4.0\" -Dmanager.notebooks.override.sparkConf.spark.master=\"mesos://master.mesos:2181\"",
   "uris": [
     "https://s3.eu-central-1.amazonaws.com/spark-notebook/tgz/spark-notebook-0.6.2-scala-2.10.4-spark-1.5.0-hadoop-2.5.0-cdh5.3.3-with-hive-with-parquet.tgz",
     "https://downloads.mesosphere.com/java/jre-7u76-linux-x64.tar.gz"
