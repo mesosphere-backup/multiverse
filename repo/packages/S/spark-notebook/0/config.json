@@ -6,6 +6,5 @@
       "type": "integer",
       "default": 8899
     }
-  },
-  "additionalProperties": false
+  }
 }
