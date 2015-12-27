@@ -4,7 +4,7 @@
       "description": "etcd specific configuration properties",
       "properties": {
         "docker-image": {
-          "default": "mesosphere/etcd-mesos:0.1.0",
+          "default": "mesosphere/etcd-mesos:latest",
           "description": "Docker image used to launch the etcd framework on DCOS.",
           "type": "string"
         },
