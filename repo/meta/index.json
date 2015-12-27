@@ -60,7 +60,7 @@
     },
     {
       "currentVersion":"0.1.0",
-      "description":"Example DCOS application package",
+      "description":"Example DCOS application package.",
       "framework":false,
       "name":"helloworld",
       "tags":[
@@ -119,6 +119,19 @@
         "k8s-0.14.2-k8sm-0.5-dcos-20150603T1136520000":"0",
         "v1.0.5-v0.6.4-alpha":"1",
         "v1.0.6-v0.6.7-alpha":"2"
+      }
+    },
+    {
+      "currentVersion":"0.13.0-RC3",
+      "description":"A cluster-wide init and control system for services in cgroups or Docker containers.",
+      "framework":true,
+      "name":"marathon",
+      "tags":[
+        "init",
+        "long-running"
+      ],
+      "versions":{
+        "0.13.0-RC3":"0"
       }
     },
     {
