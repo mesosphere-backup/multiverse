@@ -4,11 +4,7 @@
   "properties": {
     "port": {
       "type": "integer",
-      "default": 80
-    },
-    "role": {
-      "type": "string",
-      "default": "slave_public"
+      "default": 8080
     }
   },
   "additionalProperties": false
