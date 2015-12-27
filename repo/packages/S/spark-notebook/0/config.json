@@ -22,6 +22,5 @@
   "required": [
     "spark-notebook"
   ],
-  "type": "object",
   "additionalProperties": false
 }
