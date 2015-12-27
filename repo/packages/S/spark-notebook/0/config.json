@@ -2,10 +2,26 @@
   "$schema": "http://json-schema.org/schema#",
   "type": "object",
   "properties": {
-    "port": {
-      "type": "integer",
-      "default": 8899
+    "spark-notebook": {
+      "description": "Spark Notebook specific configuration properties",
+      "properties": {
+        "port": {
+            "default": 8899,
+            "description": "Port running the spark notebook.",
+            "minimum": 1,
+            "maximum": 65535,
+            "type": "integer"
+        }
+      },
+      "required": [
+        "port"
+      ],
+      "type": "object"
     }
   },
+  "required": [
+    "spark-notebook"
+  ],
+  "type": "object",
   "additionalProperties": false
 }
