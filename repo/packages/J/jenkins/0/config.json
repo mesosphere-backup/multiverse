@@ -2,52 +2,65 @@
   "type": "object",
   "properties": {
     "jenkins": {
-      "description": "Jenkins framework configuration properties",
+      "description": "Jenkins specific configuration properties",
       "type": "object",
       "properties": {
-        "framework_name": {
-          "description": "The framework name to register with Mesos.",
-          "type": "string",
-          "default": "jenkins"
+      	"name": {
+          "default": "jenkins",
+          "description": "The name of Jenkins on marathon.",
+          "type": "string"
         },
-        "host": {
-            "description": "The host that Jenkins agents will use to connect back to the master.",
-            "type": "string",
-            "default": "$HOST"
+        "home": {
+          "default": "./jenkins-on-mesos",
+          "description": "The location of your Jenkins home drive. If using NFS, set this to the location of the NFS drive as it appears on all machines.",
+          "type": "string"
         },
-        "cpus": {
-            "description": "CPU shares to allocate to each Jenkins master.",
-            "type": "number",
-            "default": 1.0,
-            "minimum": 0.1
+        "port": {
+          "default": 12345,
+          "description": "Jenkins' static port binding. For fail-over to function, this cannot be random. However, using a port number of 0 will make it random.",
+          "type": "integer"
         },
         "mem": {
-            "description": "Memory to allocate to each Jenkins master.",
-            "type": "number",
-            "default": 768.0,
-            "minimum": 768.0
+          "default": 700,
+          "description": "Jenkins' memory reservation.",
+          "type": "integer"
         },
-        "host_volume": {
-          "description": "The location of a volume on the host to be used for persisting Jenkins configuration and build data. The final location will be derived from this value plus the name set in `framework_name` (e.g. `/mnt/host_volume//jenkins`). Note that this path must be the same on all DCOS agents.",
-          "type": "string",
-          "default": "/tmp"
-        },
-        "catalina_opts": {
-            "description": "Optional arguments to pass to the Tomcat application server.",
-            "type": "string",
-            "default": "-Xms512m -Xmx512m -Dport.http=$PORT0 -Dcontext.path=$JENKINS_CONTEXT"
+        "tarball": {
+          "default": "https://downloads.mesosphere.io/jenkins/0.8.0/jenkins-on-mesos.tgz",
+          "description": "The cluster-wide accessible location of your Jenkins tarball.",
+          "type": "string"
         }
       },
       "required": [
-        "framework_name",
-        "host",
-        "cpus",
+        "home",
+        "port",
         "mem",
-        "host_volume"
+        "tarball"
+      ]
+    },
+    "java": {
+    	"description": "Java specific configuration properties",
+      "type": "object",
+      "properties": {
+      	"opts": {
+          "default": "-Xmx512m",
+          "description": "Regular java cmdline flags",
+          "type": "string"
+        },
+        "tarball": {
+          "default": "https://downloads.mesosphere.io/java/jre-7u76-linux-x64.tar.gz",
+          "description": "The cluster-wide accessible location of your Java tarball.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "opts",
+        "tarball"
       ]
     }
   },
   "required": [
-    "jenkins"
+    "jenkins",
+    "java"
   ]
 }
