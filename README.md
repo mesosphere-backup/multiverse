@@ -12,6 +12,7 @@ To install and use the Multiverse:
 
 ```sh
 dcos config prepend package.sources https://github.com/mesosphere/multiverse/archive/version-1.x.zip
+dcos package update
 ```
 
 ## Branches
