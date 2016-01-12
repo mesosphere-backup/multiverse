@@ -45,7 +45,7 @@
       }
     },
     {
-      "currentVersion":"0.0.1",
+      "currentVersion":"0.0.2",
       "description":"A distributed consistent key-value store for shared configuration and service discovery.",
       "framework":true,
       "name":"etcd",
@@ -55,7 +55,8 @@
         "consensus"
       ],
       "versions":{
-        "0.0.1":"0"
+        "0.0.1":"0",
+        "0.0.2":"1"
       }
     },
     {
