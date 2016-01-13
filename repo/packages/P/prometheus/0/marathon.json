@@ -1,0 +1,51 @@
+{
+  "id": "{{prometheus.framework-name}}",
+  "instances": {{prometheus.instances}},
+  "cpus": {{prometheus.cpus}},
+  "mem": {{prometheus.mem}},
+  "constraints": [["hostname", "LIKE", "{{prometheus.hostname}}"]],
+  "env": {
+    "PAGERDUTY_KEY": "{{ prometheus.pagerduty-key }}"
+  },
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "mesosphere/prometheus-dcos:0.16.1",
+      "network": "BRIDGE",
+      "portMappings": [{
+        "containerPort": 9090,
+        "hostPort": 0,
+        "servicePort": 9090,
+        "protocol": "tcp"
+      },
+      {
+        "containerPort": 9093,
+        "hostPort": 0,
+        "servicePort": 9093,
+        "protocol": "tcp"
+      }],
+      "forcePullImage": true
+    },
+    "volumes": [{
+      "containerPath": "/prometheus",
+      "hostPath": "{{prometheus.storage-path}}",
+      "mode": "RW"
+    }]
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "path": "/",
+      "portIndex": 0,
+      "gracePeriodSeconds": 30,
+      "intervalSeconds": 30,
+      "timeoutSeconds": 10,
+      "maxConsecutiveFailures": 2,
+      "ignoreHttp1xx": false
+    }
+  ],
+  "upgradeStrategy": {
+    "minimumHealthCapacity": 0.5,
+    "maximumOverCapacity": 0.0
+  }
+}
