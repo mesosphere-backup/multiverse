@@ -155,6 +155,32 @@
       }
     },
     {
+      "currentVersion":"0.0.0-0.1",
+      "description":"Your private path to access network resources and services securely: Server service",
+      "framework":false,
+      "name":"openvpn",
+      "tags":[
+        "vpn",
+        "remote-access"
+      ],
+      "versions":{
+        "0.0.0-0.1":"0"
+      }
+    },
+    {
+      "currentVersion":"0.0.0-0.1",
+      "description":"Your private path to access network resources and services securely: Admin service.",
+      "framework":false,
+      "name":"openvpn-admin",
+      "tags":[
+        "vpn",
+        "remote-access"
+      ],
+      "versions":{
+        "0.0.0-0.1":"0"
+      }
+    },
+    {
       "currentVersion":"0.1.1",
       "description":"A distributed NoSQL key-value data store that offers high availability, fault tolerance, operational simplicity, and scalability.",
       "framework":true,
