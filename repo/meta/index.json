@@ -125,7 +125,7 @@
       }
     },
     {
-      "currentVersion":"0.0.0-0.1",
+      "currentVersion":"0.0.1-0.1",
       "description":"HAProxy configured from marathon state",
       "framework":false,
       "name":"marathon-lb",
@@ -137,7 +137,8 @@
         "haproxy"
       ],
       "versions":{
-        "0.0.0-0.1":"2"
+        "0.0.0-0.1":"2",
+        "0.0.1-0.1":"3"
       }
     },
     {
