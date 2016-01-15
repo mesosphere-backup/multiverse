@@ -60,6 +60,18 @@
       }
     },
     {
+      "currentVersion":"0.8.1",
+      "description":"ZooKeeper co-process for instance monitoring, backup/recovery, cleanup and visualization.",
+      "framework":false,
+      "name":"exhibitor",
+      "tags":[
+        "zookeeper"
+      ],
+      "versions":{
+        "0.8.1":"0"
+      }
+    },
+    {
       "currentVersion":"0.1.0",
       "description":"Example DCOS application package.",
       "framework":false,
