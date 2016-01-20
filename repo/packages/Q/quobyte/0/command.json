@@ -1,5 +1,5 @@
 {
   "pip": [
-    "https://pypi.python.org/packages/source/d/dcos-quobyte/dcos_quobyte-1.0.0a2-py2.py3-none-any.whl"
+    "dcos-quobyte>=1.0.0a2"
   ]
 }
