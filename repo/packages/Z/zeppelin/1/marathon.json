@@ -22,7 +22,7 @@
         "SPARK_HOME": "${MESOS_SANDBOX}/{{zeppelin.spark_version}}"
     },
     "cmd": "sed \"s#<value>8080</value>#<value>$PORT0</value>#\" < conf/zeppelin-site.xml.template > conf/zeppelin-site.xml && eval $(env | grep '^\\(SPARK\\|ZEPPELIN_\\).*=') bin/zeppelin.sh start",
-    "ports": [0, 0],
+    "ports": [0],
     "cpus": 1,
     "mem": 2048.0,
     "uris": ["{{zeppelin.spark_uri}}"]
