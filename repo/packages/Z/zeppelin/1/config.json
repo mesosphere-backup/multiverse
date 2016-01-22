@@ -11,6 +11,12 @@
                     "type": "string",
                     "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
                 },
+                "dns-suffix": {
+                    "default": ".marathon.mesos",
+                    "description": "This value is appended to the framework-name value to form the canonical DNS name for the Zeppelin components.",
+                    "type": "string",
+                    "pattern": "^(?:\\.[a-z][a-z0-9]*?(?:-[a-z0-9]+)*)+$"
+                },
                 "spark_uri":  {
                     "description": "The URI of the Spark distribution to run with Zeppelin.",
                     "type": "string",

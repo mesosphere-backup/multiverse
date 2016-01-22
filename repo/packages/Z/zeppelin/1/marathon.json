@@ -17,6 +17,7 @@
         "maxConsecutiveFailures": 3
     }],
     "env": {
+        "ZEPPELIN_JAVA_OPTS": "-Dspark.mesos.webui.url=http://{{zeppelin.framework-name}}{{zeppelin.dns-suffix}}:${PORT0}",
         "SPARK_APP_NAME": "{{zeppelin.framework-name}}",
         "SPARK_MESOS_EXECUTOR_DOCKER_IMAGE": "{{zeppelin.spark_docker_image}}",
         "SPARK_HOME": "${MESOS_SANDBOX}/{{zeppelin.spark_version}}"
