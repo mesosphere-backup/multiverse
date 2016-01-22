@@ -4,6 +4,7 @@
         "type": "DOCKER",
         "docker": {
             "image": "mesosphere/zeppelin:0.5.5",
+            "forcePullImage": true,
             "network": "HOST"
         }
     },
