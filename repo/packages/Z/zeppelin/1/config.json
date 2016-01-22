@@ -5,6 +5,12 @@
         "zeppelin": {
             "type": "object",
             "properties": {
+                "framework-name": {
+                    "default": "zeppelin",
+                    "description": "The framework name to register with Mesos.",
+                    "type": "string",
+                    "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
+                },
                 "spark_uri":  {
                     "description": "The URI of the Spark distribution to run with Zeppelin.",
                     "type": "string",
