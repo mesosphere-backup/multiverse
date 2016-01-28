@@ -19,6 +19,16 @@
           "description": "Set to true to enable Kubernetes local DNS services, allows pods to locate services by name.",
           "type": "boolean"
         },
+        "enable-deployments": {
+          "default": false,
+          "description": "Enable deployment experimental feature, not ready for production use.",
+          "type": "boolean"
+        },
+        "enable-daemonsets": {
+          "default": false,
+          "description": "Enable daemonset experimental feature, not ready for production use.",
+          "type": "boolean"
+        },
         "etcd-mesos-framework-name": {
           "default": "disabled",
           "description": "Which etcd-mesos framework to rely on. Corresponds to the configured framework-name for an etcd-mesos framework. Set this to disabled to use a local etcd instance in the scheduler container.",
@@ -103,10 +113,6 @@
           "minimum": 1,
           "maximum": 65535,
           "type": "integer"
-        },
-        "apiserver-runtime-config": {
-          "description": "A set of key=value pairs that describe runtime configuration that may be passed to the apiserver. api/<version> key can be used to turn on/off specific api versions. api/all and api/legacy are special keys to control all and legacy api versions respectively. For example: extensions/v1beta1/deployments=true,extensions/v1beta1/daemonsets=true",
-          "type": "string"
         },
         "scheduler-driver-port": {
           "default": 25501,
@@ -238,6 +244,8 @@
         }
       },
       "required": [
+        "enable-deployments",
+        "enable-daemonsets",
         "etcd-mesos-framework-name",
         "framework-name",
         "cpus",

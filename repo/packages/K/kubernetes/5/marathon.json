@@ -19,6 +19,8 @@
     "DEFAULT_DNS_NAME": "{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}",
     "FRAMEWORK_NAME": "{{kubernetes.framework-name}}",
     "FRAMEWORK_WEBURI": "https://{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}:{{kubernetes.apiserver-proxy-port}}",
+    "ENABLE_DEPLOYMENTS": "{{kubernetes.enable-deployments}}",
+    "ENABLE_DAEMONSETS": "{{kubernetes.enable-daemonsets}}",
 
     {{#mesos.master}}
     "K8SM_MESOS_MASTER": "{{mesos.master}}",
@@ -83,10 +85,6 @@
     {{#kubernetes.pki.service-accounts-key}}
     "PKI_SERVICE_ACCOUNTS_KEY": "{{kubernetes.pki.service-accounts-key}}",
     {{/kubernetes.pki.service-accounts-key}}
-
-    {{#kubernetes.apiserver-runtime-config}}
-    "APISERVER_RUNTIME_CONFIG": "{{kubernetes.apiserver-runtime-config}}",
-    {{/kubernetes.apiserver-runtime-config}}
 
     "K8SM_FAILOVER_TIMEOUT": "{{kubernetes.failover-timeout}}",
     "PROXY_MODE": "{{kubernetes.proxy-mode}}",
