@@ -1,5 +1,17 @@
 {
-  "$schema": "http://json-schema.org/schema#",
-  "type": "object",
-  "properties": {}
+  "properties": {
+    "zeppelin": {
+      "description": "Zeppelin specific configuration properties",
+      "properties": {
+        "framework-name": {
+          "default": "zeppelin",
+          "description": "The framework name to register with Mesos.",
+          "type": "string",
+          "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object"
 }
