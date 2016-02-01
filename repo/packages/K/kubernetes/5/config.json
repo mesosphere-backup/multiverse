@@ -41,6 +41,11 @@
           "type": "string",
           "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
         },
+        "framework-store-uri": {
+          "default": "zk://master.mesos:2181/k8sm",
+          "description": "Where the framework should store metadata, either in Zookeeper (zk://host:port/path) or in etcd (etcd://path).",
+          "type": "string"
+        },
         "kube-dns-domain": {
           "default": "cluster.local",
           "description": "Domain used by pods for Kubernetes service lookup.",
@@ -248,6 +253,7 @@
         "enable-daemonsets",
         "etcd-mesos-framework-name",
         "framework-name",
+        "framework-store-uri",
         "cpus",
         "dns-suffix",
         "instances",

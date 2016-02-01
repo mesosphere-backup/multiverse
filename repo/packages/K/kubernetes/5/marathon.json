@@ -18,6 +18,7 @@
     "GLOG_v": "{{kubernetes.logging-verbosity}}",
     "DEFAULT_DNS_NAME": "{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}",
     "FRAMEWORK_NAME": "{{kubernetes.framework-name}}",
+    "FRAMEWORK_STORE_URI": "{{kubernetes.framework-store-uri}}",
     "FRAMEWORK_WEBURI": "https://{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}:{{kubernetes.apiserver-proxy-port}}",
     "ENABLE_DEPLOYMENTS": "{{kubernetes.enable-deployments}}",
     "ENABLE_DAEMONSETS": "{{kubernetes.enable-daemonsets}}",
