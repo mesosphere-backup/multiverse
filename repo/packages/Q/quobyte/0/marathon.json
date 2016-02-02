@@ -16,15 +16,7 @@
     "docker": {
       "image": "quobyte/quobyte-mesos:0.25.0",
       "forcePullImage": true,
-      "network": "BRIDGE",
-      "portMappings": [
-        {
-          "containerPort": {{quobyte.port}},
-          "hostPort": {{quobyte.port}},
-          "servicePort": {{quobyte.port}},
-          "protocol": "tcp"
-        }
-      ]
+      "network": "HOST"
     }
   },
   "healthChecks": [
