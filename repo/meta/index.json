@@ -123,7 +123,7 @@
       }
     },
     {
-      "currentVersion":"0.14.0-RC4",
+      "currentVersion":"0.15.0-RC2",
       "description":"A cluster-wide init and control system for services in cgroups or Docker containers.",
       "framework":true,
       "name":"marathon",
@@ -136,7 +136,8 @@
         "0.14.0-RC1":"1",
         "0.14.0-RC2":"2",
         "0.14.0-RC3":"3",
-        "0.14.0-RC4":"4"
+        "0.14.0-RC4":"4",
+        "0.15.0-RC2":"5"
       }
     },
     {
