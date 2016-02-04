@@ -19,6 +19,11 @@
                     "description": "The URI of the Spark docker image to use in spark.mesos.executor.docker.image",
                     "type": "string",
                     "default": "mesosphere/spark:1.6.0"
+                },
+                "vhost": {
+                    "description": "The domain name marathon-lb will use to route requests to this app",
+                    "type": "string",
+                    "default": ""
                 }
             },
             "required": [
