@@ -24,9 +24,9 @@
           "type": "number"
         },
         "mem": {
-          "default": 512.0,
+          "default": 1024.0,
           "description": "Memory (MB) to allocate to each Quboyte scheduler instance.",
-          "minimum": 128.0,
+          "minimum": 768.0,
           "type": "number"
         },
         "instances": {
