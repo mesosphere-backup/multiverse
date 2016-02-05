@@ -59,13 +59,19 @@
           "type": "string",
           "description": "The Mesos DNS domain featuring SRV records in the Mesos cluster.",
           "default": "mesos"
+          },
+        "framework_image": {
+          "type": "string",
+          "description": "Quobyte Mesos framework image version",
+          "default": "quobyte/quobyte-mesos:0.25.0"
           }
       },
       "required": [
         "zk",
         "port",
         "docker_image",
-        "mesos-dns_domain"
+        "mesos-dns_domain",
+        "framework_image"
       ]
     }
   },
