@@ -9,12 +9,13 @@
     "MESOS_MASTER":"{{mesos.master}}",
     "PORT": "{{quobyte.port}}",
     "DOCKER_IMAGE": "{{quobyte.docker_image}}",
-    "MESOS_DNS_DOMAIN": "{{quobyte.mesos-dns_domain}}"
+    "MESOS_DNS_DOMAIN": "{{quobyte.mesos-dns_domain}}",
+    "FRAMEWORK_IMAGE": "quobyte/quobyte-mesos:{{mesos.version}}"
     },
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "quobyte/quobyte-mesos:0.25.0",
+      "image": "quobyte/quobyte-mesos:{{mesos.version}}",
       "forcePullImage": true,
       "network": "HOST"
     }
