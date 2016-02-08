@@ -63,7 +63,7 @@
         "framework_image": {
           "type": "string",
           "description": "Quobyte Mesos framework image version",
-          "default": "quobyte/quobyte-mesos:0.25.0"
+          "default": "quobyte/quobyte-mesos:latest"
           }
       },
       "required": [
