@@ -1,8 +1,8 @@
 {
   "id": "{{quobyte.framework-name}}",
-  "cpus": "{{quobyte.cpus}}",
-  "mem": "{{quobyte.mem}}",
-  "instances": "{{quobyte.instances}}",
+  "cpus": {{quobyte.cpus}},
+  "mem": {{quobyte.mem}},
+  "instances": {{quobyte.instances}},
   "args": [],
   "env":{
     "ZOOKEEPER": "--zk={{quobyte.zk}}",
