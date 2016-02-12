@@ -55,11 +55,6 @@
           "description": "Docker image to be used for the Quobyte services.",
           "default": "quobyte-server"
           },
-        "mesos-dns_domain": {
-          "type": "string",
-          "description": "The Mesos DNS domain featuring SRV records in the Mesos cluster.",
-          "default": ".mesos"
-          },
         "framework_image": {
           "type": "string",
           "description": "Quobyte Mesos framework image version",
@@ -75,7 +70,6 @@
         "zk",
         "port",
         "docker_image",
-        "mesos-dns_domain",
         "framework_image",
         "data_resources"
       ]
