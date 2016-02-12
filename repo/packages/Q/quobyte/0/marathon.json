@@ -1,9 +1,9 @@
 {
   "id": "{{quobyte.framework-name}}",
-  "cmd": "/opt/quobyte-mesos --zk={{quobyte.zk}} --master={{mesos.master}} --port={{quobyte.port}} --docker_image={{quobyte.docker_image}} --mesos_dns_domain={{quobyte.mesos-dns_domain}} --framework_image='quobyte/quobyte-mesos:latest' --data_resources={{quobyte.data_resources}}",
-  "cpus": {{quobyte.cpus}},
-  "mem": {{quobyte.mem}},
-  "instances": {{quobyte.instances}},
+  "cmd": "/opt/quobyte-mesos --zk={{quobyte.zk}} --master={{mesos.master}} --port={{quobyte.port}} --docker_image={{quobyte.docker_image}} --mesos_dns_domain={{quobyte.mesos-dns_domain}} --framework_image=quobyte/quobyte-mesos:latest --data_resources={{quobyte.data_resources}}",
+  "cpus": "{{quobyte.cpus}}",
+  "mem": "{{quobyte.mem}}",
+  "instances": "{{quobyte.instances}}",
   "args": [],
   "container": {
     "type": "DOCKER",
