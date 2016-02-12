@@ -4,6 +4,7 @@
   "mem": {{quobyte.mem}},
   "instances": {{quobyte.instances}},
   "args": [
+    "/opt/quobyte-mesos-cmd.sh"
     "--zk","{{quobyte.zk}}",
     "--master", "{{mesos.master}}",
     "--port", "{{quobyte.port}}",
