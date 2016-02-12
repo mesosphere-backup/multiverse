@@ -98,7 +98,8 @@
         "framework_image",
         "registry_resources",
         "metadata_resources",
-        "data_resources"
+        "data_resources",
+        "framework_url"
       ]
     }
   },
