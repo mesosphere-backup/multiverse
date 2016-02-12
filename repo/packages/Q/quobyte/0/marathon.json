@@ -10,8 +10,8 @@
     "--port", "{{quobyte.port}}",
     "--docker_image", "{{quobyte.docker_image}}",
     "--framework_image", "quobyte/quobyte-mesos:latest",
-    "--registry_resources", "{{quobyte.registry_resources}}"],
-    "--metadata_resources", "{{quobyte.metadata_resources}}"],
+    "--registry_resources", "{{quobyte.registry_resources}}",
+    "--metadata_resources", "{{quobyte.metadata_resources}}",
     "--data_resources", "{{quobyte.data_resources}}"],
   "env":{
     },
