@@ -60,10 +60,20 @@
           "description": "Quobyte Mesos framework image version",
           "default": "quobyte/quobyte-mesos:latest"
           },
+        "registry_resources": {
+          "type": "string",
+          "description": "Resources for data service",
+          "default": "cpus:0.5;mem:2084;disk:8"
+          },
+        "metadata_resources": {
+          "type": "string",
+          "description": "Resources for data service",
+          "default": "cpus:1.0;mem:4096;disk:8"
+          },
         "data_resources": {
           "type": "string",
           "description": "Resources for data service",
-          "default": "cpus:2.0;mem:4096;disk:32"
+          "default": "cpus:2.0;mem:3072;disk:16"
           }
       },
       "required": [
@@ -71,6 +81,8 @@
         "port",
         "docker_image",
         "framework_image",
+        "registry_resources",
+        "metadata_resources",
         "data_resources"
       ]
     }
