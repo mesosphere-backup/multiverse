@@ -64,6 +64,11 @@
           "type": "string",
           "description": "Quobyte Mesos framework image version",
           "default": "quobyte/quobyte-mesos:latest"
+          },
+        "data_resources": {
+          "type": "string",
+          "description": "Resources for data service",
+          "default": "cpus:2.0;mem:4096;disk:32"
           }
       },
       "required": [
@@ -71,7 +76,8 @@
         "port",
         "docker_image",
         "mesos-dns_domain",
-        "framework_image"
+        "framework_image",
+        "data_resources"
       ]
     }
   },
