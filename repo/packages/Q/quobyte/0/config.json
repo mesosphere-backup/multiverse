@@ -73,7 +73,17 @@
         "data_resources": {
           "type": "string",
           "description": "Resources for data service",
-          "default": "cpus:2.0;mem:3072;disk:16"
+          "default": "cpus:2.0;mem:3072;disk:15"
+          },
+        "api_resources": {
+          "type": "string",
+          "description": "Resources for data service",
+          "default": "cpus:1.0;mem:4096;disk:3"
+          },
+        "webconsole_resources": {
+          "type": "string",
+          "description": "Resources for data service",
+          "default": "cpus:2.0;mem:3072;disk:3"
           }
       },
       "required": [
