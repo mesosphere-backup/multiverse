@@ -1,17 +1,10 @@
 {
   "id": "{{quobyte.framework-name}}",
+  "cmd": "/opt/quobyte-mesos --zk={{quobyte.zk}} --master={{mesos.master}} --port={{quobyte.port}} --docker_image={{quobyte.docker_image}} --mesos_dns_domain={{quobyte.mesos-dns_domain}} --framework_image='quobyte/quobyte-mesos:latest' --data_resources={{quobyte.data_resources}}",
   "cpus": {{quobyte.cpus}},
   "mem": {{quobyte.mem}},
   "instances": {{quobyte.instances}},
   "args": [],
-  "env":{
-    "ZOOKEEPER": "{{quobyte.zk}}",
-    "MESOS_MASTER":"{{mesos.master}}",
-    "PORT": "{{quobyte.port}}",
-    "DOCKER_IMAGE": "{{quobyte.docker_image}}",
-    "MESOS_DNS_DOMAIN": "{{quobyte.mesos-dns_domain}}",
-    "FRAMEWORK_IMAGE": "quobyte/quobyte-mesos:latest"
-    },
   "container": {
     "type": "DOCKER",
     "docker": {
