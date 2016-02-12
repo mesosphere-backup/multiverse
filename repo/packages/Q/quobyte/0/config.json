@@ -58,7 +58,7 @@
         "mesos-dns_domain": {
           "type": "string",
           "description": "The Mesos DNS domain featuring SRV records in the Mesos cluster.",
-          "default": "mesos"
+          "default": ".mesos"
           },
         "framework_image": {
           "type": "string",
