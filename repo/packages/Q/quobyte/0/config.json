@@ -84,6 +84,11 @@
           "type": "string",
           "description": "Resources for data service",
           "default": "cpus:2.0;mem:3072;disk:3"
+          },
+        "framework_url": {
+          "type": "string",
+          "description": "Webui_url to be managed through master proxy",
+          "default": "http://webconsole.quobyte.slave.mesos"
           }
       },
       "required": [
