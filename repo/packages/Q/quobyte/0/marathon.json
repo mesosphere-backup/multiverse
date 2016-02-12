@@ -4,12 +4,12 @@
   "mem": {{quobyte.mem}},
   "instances": {{quobyte.instances}},
   "args": [
-    "--zk",{{quobyte.zk}},
-    "--master", {{mesos.master}},
-    "--port", {{quobyte.port}},
-    "--docker_image", {{quobyte.docker_image}},
+    "--zk","{{quobyte.zk}}",
+    "--master", "{{mesos.master}}",
+    "--port", "{{quobyte.port}}",
+    "--docker_image", "{{quobyte.docker_image}}",
     "--framework_image", "quobyte/quobyte-mesos:latest",
-    "--data_resources", {{quobyte.data_resources}}],
+    "--data_resources", "{{quobyte.data_resources}}"],
   "env":{
     },
   "container": {
