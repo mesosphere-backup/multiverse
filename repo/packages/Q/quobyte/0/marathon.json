@@ -3,14 +3,14 @@
   "cpus": {{quobyte.cpus}},
   "mem": {{quobyte.mem}},
   "instances": {{quobyte.instances}},
-  "args": [],
+  "args": [
+    "--zk={{quobyte.zk}}",
+    "--master={{mesos.master}}",
+    "--port={{quobyte.port}}",
+    "--docker_image={{quobyte.docker_image}}",
+    "--framework_image=quobyte/quobyte-mesos:latest",
+    "--data_resources={{quobyte.data_resources}}"],
   "env":{
-    "ZOOKEEPER": "--zk={{quobyte.zk}}",
-    "MESOS_MASTER":"--master={{mesos.master}}",
-    "PORT": "--port={{quobyte.port}}",
-    "DOCKER_IMAGE": "--docker_image={{quobyte.docker_image}}",
-    "FRAMEWORK_IMAGE": "--framework_image=quobyte/quobyte-mesos:latest",
-    "DATA_RESOURCES": "--data_resources={{quobyte.data_resources}}"
     },
   "container": {
     "type": "DOCKER",
