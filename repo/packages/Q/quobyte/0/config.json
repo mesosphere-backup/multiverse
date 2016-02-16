@@ -93,7 +93,7 @@
         "public_slave_role": {
           "type": "string",
           "description": "Mesos role name for publicly accessable resources",
-          "default": "slave_public"
+          "default": "slave_public,*"
           }
       },
       "required": [
