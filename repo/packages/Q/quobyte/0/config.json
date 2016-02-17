@@ -89,11 +89,6 @@
           "type": "string",
           "description": "Webui_url to be managed through master proxy",
           "default": "http://webconsole.quobyte.slave.mesos"
-          },
-        "public_slave_role": {
-          "type": "string",
-          "description": "Mesos role name for publicly accessable resources",
-          "default": "slave_public,*"
           }
       },
       "required": [

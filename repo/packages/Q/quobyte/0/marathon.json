@@ -14,8 +14,7 @@
     "--metadata_resources", "{{quobyte.metadata_resources}}",
     "--data_resources", "{{quobyte.data_resources}}",
     "--api_resources", "{{quobyte.api_resources}}",
-    "--webconsole_resources", "{{quobyte.webconsole_resources}}",
-    "--public_slave_role", "{{quobyte.public_slave_role}}"],
+    "--webconsole_resources", "{{quobyte.webconsole_resources}}"],
   "env":{
     },
   "container": {
