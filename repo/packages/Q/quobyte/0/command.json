@@ -1,5 +1,5 @@
 {
   "pip": [
-    "dcos-quobyte>=1.0.0b0"
+    "dcos-quobyte>=1.0.1b0"
   ]
 }
