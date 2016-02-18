@@ -1,0 +1,39 @@
+{
+  "id": "{{quobyte.framework-name}}",
+  "cpus": {{quobyte.cpus}},
+  "mem": {{quobyte.mem}},
+  "instances": {{quobyte.instances}},
+  "args": [
+    "/opt/quobyte-mesos-cmd.sh",
+    "--zk","{{quobyte.zk}}",
+    "--master", "{{mesos.master}}",
+    "--port", "{{quobyte.port}}",
+    "--docker_image", "{{quobyte.docker_image}}",
+    "--framework_image", "quobyte/quobyte-mesos:latest",
+    "--registry_resources", "{{quobyte.registry_resources}}",
+    "--metadata_resources", "{{quobyte.metadata_resources}}",
+    "--data_resources", "{{quobyte.data_resources}}",
+    "--api_resources", "{{quobyte.api_resources}}",
+    "--webconsole_resources", "{{quobyte.webconsole_resources}}"],
+  "env":{
+    },
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "quobyte/quobyte-mesos:latest",
+      "forcePullImage": true,
+      "network": "HOST"
+    }
+  },
+  "healthChecks": [
+    {
+      "path": "/v1/health",
+      "portIndex": 0,
+      "protocol": "HTTP",
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
