@@ -214,6 +214,11 @@
           "description": "Generate Mesos task discovery information to be used by systems like mesos-dns.",
           "type": "boolean"
         },
+        "host-port-endpoints": {
+          "default": true,
+          "description": "When enabled, use custom Kubernetes-Mesos networking for compatibility with Docker default host-private container IPs.",
+          "type": "boolean"
+        },
         "proxy-mode": {
           "default": "userspace",
           "description": "Which proxy mode to use: 'userspace' (older) or 'iptables' (faster). If the iptables proxy is selected, regardless of how, but the system's kernel or iptables versions are insufficient, this always falls back to the userspace proxy.",
@@ -256,6 +261,7 @@
         "framework-store-uri",
         "cpus",
         "dns-suffix",
+        "host-port-endpoints",
         "instances",
         "failover-timeout",
         "logging-verbosity",

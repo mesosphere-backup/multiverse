@@ -30,6 +30,7 @@
     "FRAMEWORK_WEBURI": "https://{{kubernetes.framework-name}}{{kubernetes.dns-suffix}}:{{kubernetes.apiserver-proxy-port}}",
     "ENABLE_DEPLOYMENTS": "{{kubernetes.enable-deployments}}",
     "ENABLE_DAEMONSETS": "{{kubernetes.enable-daemonsets}}",
+    "HOST_PORT_ENDPOINTS": "{{kubernetes.host-port-endpoints}}",
 
     {{#mesos.master}}
     "K8SM_MESOS_MASTER": "{{mesos.master}}",
