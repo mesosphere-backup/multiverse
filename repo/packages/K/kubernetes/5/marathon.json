@@ -9,7 +9,15 @@
     "docker": {
       "image": "{{kubernetes.docker-image}}",
       "forcePullImage": true,
-      "network": "HOST"
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 0, "hostPort": {{kubernetes.apiserver-proxy-port}}, "protocol": "tcp" },
+        { "containerPort": 0, "hostPort": {{kubernetes.apiserver-port}}, "protocol": "tcp" },
+        { "containerPort": 0, "hostPort": {{kubernetes.apiserver-secure-port}}, "protocol": "tcp" },
+        { "containerPort": 0, "hostPort": {{kubernetes.scheduler-port}}, "protocol": "tcp" },
+        { "containerPort": 0, "hostPort": {{kubernetes.controller-manager-port}}, "protocol": "tcp" },
+        { "containerPort": 0, "hostPort": {{kubernetes.scheduler-driver-port}}, "protocol": "tcp" }
+      ]
     }
   },
   "env":{
@@ -101,8 +109,6 @@
     "SCHEDULER_MESOS_EXECUTOR_CPUS": "{{kubernetes.initial-executor-cpus}}",
     "SCHEDULER_MESOS_EXECUTOR_MEM": "{{kubernetes.initial-executor-mem}}"
   },
-  "ports": [{{kubernetes.apiserver-proxy-port}},{{kubernetes.apiserver-port}}, {{kubernetes.apiserver-secure-port}}, {{kubernetes.scheduler-port}}, {{kubernetes.controller-manager-port}}, {{kubernetes.scheduler-driver-port}}],
-  "requirePorts": true,
   "upgradeStrategy":{
     "minimumHealthCapacity": 0,
     "maximumOverCapacity": 0
