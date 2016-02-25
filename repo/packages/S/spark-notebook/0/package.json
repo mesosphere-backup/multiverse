@@ -1,12 +1,17 @@
 {
   "name": "spark-notebook",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "website": "http://spark-notebook.io",
   "scm": "https://github.com/andypetrella/spark-notebook/",
   "maintainer": "noootsab@data-fellas.guru",
   "description": "Spark Notebook package for DCOS",
   "framework": true,
-  "preInstallNotes": "",
+  "preInstallNotes": "Not gonna take long.",
   "postInstallNotes": "Yeah Spark Notebook is in da place!",
-  "tags": [ "spark", "notebook", "spark-notebook", "interactive", "big-data", "bigdata", "apachespark", "datafellas", "data-fellas" ]
+  "tags": [ "spark", "notebook", "spark-notebook", "interactive", "bigdata", "apachespark", "data-fellas" ],
+  "images": {
+    "icon-small": "https://s3-eu-west-1.amazonaws.com/spark-notebook-assets/images/logo/spark-notebook-small.png",
+    "icon-medium": "https://s3-eu-west-1.amazonaws.com/spark-notebook-assets/images/logo/spark-notebook-medium.png",
+    "icon-large": "https://s3-eu-west-1.amazonaws.com/spark-notebook-assets/images/logo/spark-notebook-large.png"
+  }
 }
