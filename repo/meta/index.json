@@ -42,6 +42,20 @@
       "versions":{
         "0.7.0":"0"
       }
+    },
+    {
+      "currentVersion":"0.0.2",
+      "description":"A distributed consistent key-value store for shared configuration and service discovery.",
+      "framework":true,
+      "name":"etcd",
+      "tags":[
+        "mesosphere",
+        "framework",
+        "consensus"
+      ],
+      "versions":{
+        "0.0.2":"0"
+      }
     }
   ],
   "version":"2.0.0-rc1"
