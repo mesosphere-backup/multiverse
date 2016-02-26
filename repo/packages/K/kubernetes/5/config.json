@@ -4,7 +4,7 @@
       "description": "Kubernetes specific configuration properties",
       "properties": {
         "docker-image": {
-          "default": "mesosphere/kubernetes:v0.7.2-v1.1.5-alpha",
+          "default": "mesosphere/kubernetes:vagrant-v0.7.2-v1.1.5-dev-alpha",
           "description": "Docker image used to launch the Kubernetes framework on DCOS.",
           "type": "string"
         },
@@ -40,6 +40,11 @@
           "description": "The framework name to register with Mesos.",
           "type": "string",
           "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
+        },
+        "framework-store-uri": {
+          "default": "zk://master.mesos:2181/k8sm",
+          "description": "Where the framework should store metadata, either in Zookeeper (zk://host:port/path) or in etcd (etcd://path).",
+          "type": "string"
         },
         "kube-dns-domain": {
           "default": "cluster.local",
@@ -209,6 +214,11 @@
           "description": "Generate Mesos task discovery information to be used by systems like mesos-dns.",
           "type": "boolean"
         },
+        "host-port-endpoints": {
+          "default": true,
+          "description": "When enabled, use custom Kubernetes-Mesos networking for compatibility with Docker default host-private container IPs.",
+          "type": "boolean"
+        },
         "proxy-mode": {
           "default": "userspace",
           "description": "Which proxy mode to use: 'userspace' (older) or 'iptables' (faster). If the iptables proxy is selected, regardless of how, but the system's kernel or iptables versions are insufficient, this always falls back to the userspace proxy.",
@@ -248,8 +258,10 @@
         "enable-daemonsets",
         "etcd-mesos-framework-name",
         "framework-name",
+        "framework-store-uri",
         "cpus",
         "dns-suffix",
+        "host-port-endpoints",
         "instances",
         "failover-timeout",
         "logging-verbosity",
