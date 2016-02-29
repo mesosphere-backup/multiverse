@@ -136,7 +136,33 @@
         "0.14.0-RC1":"1",
         "0.14.0-RC2":"2",
         "0.14.0-RC3":"3",
-        "0.14.0-RC4":"4"
+        "0.14.0-RC4":"5"
+      }
+    },
+    {
+      "currentVersion":"0.14.0-RC4",
+      "description":"A cluster-wide init and control system for services in cgroups or Docker containers, HA version.",
+      "framework":true,
+      "name":"marathon-ha",
+      "tags":[
+        "init",
+        "long-running"
+      ],
+      "versions":{
+        "0.14.0-RC4":"0"
+      }
+    },
+    {
+      "currentVersion":"0.14.0-RC4",
+      "description":"A cluster-wide init and control system for services in cgroups or Docker containers, for huge clusters.",
+      "framework":true,
+      "name":"marathon-ha-huge",
+      "tags":[
+        "init",
+        "long-running"
+      ],
+      "versions":{
+        "0.14.0-RC4":"0"
       }
     },
     {
