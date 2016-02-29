@@ -13,5 +13,6 @@
     },
     "uris": {
       "spark-1-6-0-tgz": "https://downloads.mesosphere.io/spark/assets/spark-1.6.0.tgz"
+    }
   }
 }
