@@ -2,7 +2,7 @@
   "id": "{{kubernetes.framework-name}}",
   "cpus": {{kubernetes.cpus}},
   "mem": {{kubernetes.mem}},
-  "acceptedResourceRoles": {{{marathon.resource-roles}}},
+  "acceptedResourceRoles": ["{{{marathon.resource-roles}}}"],
   "labels": {{{marathon.labels}}},
   "container": {
     "type": "DOCKER",
