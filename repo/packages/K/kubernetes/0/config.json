@@ -1,45 +1,50 @@
 {
   "properties": {
     "kubernetes": {
-      "depscription": "Kubernetes specific configuration properties",
+      "description": "Kubernetes specific configuration properties",
       "properties": {
-        "app-id": {
-          "default": "kubernetes",
-          "description": "Application ID.",
-          "type": "string",
-          "pattern": "^(?:[a-z][a-z0-9]*?(?:-[a-z0-9]+)*)$"
-        },
-        "docker-image": {
-          "default": "mesosphere/kubernetes:k8s-0.14.2-k8sm-0.5-dcos-20150603T1136520000",
-          "description": "Docker image used to launch the Kubernetes framework on DCOS.",
-          "type": "string"
-        },
         "dns-suffix": {
           "default": ".marathon.mesos",
-          "description": "This value is appended to the app-id value to form the canonical DNS name for the Kubernetes components.",
+          "description": "This value is appended to the framework-name value to form the canonical DNS name for the Kubernetes components.",
           "type": "string",
           "pattern": "^(?:\\.[a-z][a-z0-9]*?(?:-[a-z0-9]+)*)+$"
         },
         "enable-dns": {
-          "description": "Set to 1 to enable Kubernetes local DNS services, allows pods to locate services by name.",
+          "default": true,
+          "description": "Set to true to enable Kubernetes local DNS services, allows pods to locate services by name.",
+          "type": "boolean"
+        },
+        "enable-deployments": {
+          "default": false,
+          "description": "Enable deployment experimental feature, not ready for production use.",
+          "type": "boolean"
+        },
+        "enable-daemonsets": {
+          "default": false,
+          "description": "Enable daemonset experimental feature, not ready for production use.",
+          "type": "boolean"
+        },
+        "etcd-mesos-framework-name": {
+          "default": "disabled",
+          "description": "Which etcd-mesos framework to rely on. Corresponds to the configured framework-name for an etcd-mesos framework. Set this to disabled to use a local etcd instance in the scheduler container.",
           "type": "string",
-          "pattern": "^1?$"
+          "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
         },
         "framework-name": {
           "default": "kubernetes",
-          "description": "Human-readable name to use when registering with the Mesos master.",
+          "description": "The framework name to register with Mesos.",
           "type": "string",
-          "pattern": "^(?:[a-z][a-z0-9]*?(?:-[a-z0-9]+)*)$"
+          "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
         },
         "kube-dns-domain": {
-          "default": "kubernetes.local",
+          "default": "cluster.local",
           "description": "Domain used by pods for Kubernetes service lookup.",
           "type": "string",
           "pattern": "^(?:[a-z][a-z0-9]*?(?:-[a-z0-9]+)*?\\.)?(?:[a-z][a-z0-9]*?(?:-[a-z0-9]+)*)$"
         },
         "kube-dns-service-ip": {
           "default": "10.10.10.10",
-          "description": "Kubernetes DNS service portal IP address, should fall in portal-net network range.",
+          "description": "Kubernetes DNS service portal IP address, should fall in service-cluster-ip-range network range.",
           "type": "string",
           "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
         },
@@ -54,26 +59,22 @@
           "type": "string",
           "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?):(6553[0-5]|655[0-2][0-9]\\d|65[0-4](\\d){2}|6[0-4](\\d){3}|[1-5](\\d){4}|[1-9](\\d){0,3})(?:,(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?):(6553[0-5]|655[0-2][0-9]\\d|65[0-4](\\d){2}|6[0-4](\\d){3}|[1-5](\\d){4}|[1-9](\\d){0,3}))*$"
         },
-        "portal-net": {
+        "service-cluster-ip-range": {
           "default": "10.10.10.0/24",
-          "description": "Kubernetes DNS service portal IP address, should fall in portal-net network range.",
+          "description": "Kubernetes DNS service portal IP address, should fall in service-cluster-ip-range network range.",
           "type": "string",
           "pattern": "^(?:(?:[0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}(?:[0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(?:\\/(?:[0-9]|[1-2][0-9]|3[0-2]))$"
         },
+        "service-node-port-range": {
+          "description": "A port range to reserve for services with NodePort visibility. Example: '30000-32767'. Inclusive at both ends of the range.",
+          "type": "string",
+          "pattern": "^((?:6553[0-5]|655[0-2]\\d|65[0-4]\\d{2}|6[0-4]\\d{3}|[1-5]\\d{4}|[1-9]\\d{0,3})-(?:6553[0-5]|655[0-2]\\d|65[0-4]\\d{2}|6[0-4]\\d{3}|[1-5]\\d{4}|[1-9]\\d{0,3})|)$"
+        },
         "scheduler-service-ip": {
           "default": "10.10.10.9",
-          "description": "Kubernetes-Mesos scheduler service portal IP address, should fall in portal-net network range.",
+          "description": "Kubernetes-Mesos scheduler service portal IP address, should fall in service-cluster-ip-range network range.",
           "type": "string",
           "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
-        },
-        "disable-etcd-server": {
-          "description": "Set to 1 to disable the pre-packaged etcd server component. Do this if you already have an etcd cluster set up that you want to use as the backing store for Kubernetes. Also see the docs for etcd-server-list.",
-          "type": "string",
-          "pattern": "^1?$"
-        },
-        "etcd-server-list": {
-          "description": "Comma-delimited list of URLs that reference etcd-server endpoints. For example, http://myserver:2001,http://anotherserver:2001. Specify this option if you have disabled the built-in etcd-server via disable-etcd-server.",
-          "type": "string"
         },
         "cpus": {
           "default": 1.0,
@@ -82,27 +83,27 @@
           "type": "number"
         },
         "failover-timeout": {
-          "default": 300,
+          "default": 604800,
           "description": "The failover_timeout for Mesos in seconds. If a new Kubernetes scheduler instance has not re-registered with Mesos this long after a failover, Mesos will shut down all running pods. Requires checkpointing to be enabled.",
           "minimum": 0,
           "type": "integer"
         },
         "apiserver-port": {
-          "default": 25502,
+          "default": 25503,
           "description": "Read/write host port that the Kubernetes apiserver listens on.",
           "minimum": 1,
           "maximum": 65535,
           "type": "integer"
         },
-        "apiserver-ro-port": {
-          "default": 25503,
-          "description": "Read-only host port that the Kubernetes apiserver listens on.",
+        "apiserver-proxy-port": {
+          "default": 25500,
+          "description": "Read/write host port that the Kubernetes nginx proxy in front of the apiserver listens on.",
           "minimum": 1,
           "maximum": 65535,
           "type": "integer"
         },
         "apiserver-secure-port": {
-          "default": 25500,
+          "default": 25502,
           "description": "The Kubernetes apiserver port from which to serve HTTPS with authentication and authorization.",
           "minimum": 1,
           "maximum": 65535,
@@ -148,22 +149,100 @@
           "minimum": 128.0,
           "type": "number"
         },
-        "mesos-role": {
-          "description": "Mesos role for this framework.",
-          "type": "string"
+        "default-container-cpu-limit": {
+          "default": 0.25,
+          "description": "CPU shared to allocate to a container in a pod which is not CPU limited.",
+          "minimum": 0.01,
+          "type": "number"
+        },
+        "default-container-mem-limit": {
+          "default": 64.0,
+          "description": "Memory (MB) to allocate to a container in a pod which is not memory limited.",
+          "minimum": 32.0,
+          "type": "number"
+        },
+        "initial-executor-cpus": {
+          "default": 0.25,
+          "description": "Initial CPU shares allocated for the executor container.",
+          "minimum": 0.01,
+          "type": "number"
+        },
+        "initial-executor-mem": {
+          "default": 128.0,
+          "description": "Initial memory (MB) allocated for the executor container.",
+          "minimum": 128.0,
+          "type": "number"
+        },
+        "framework-roles": {
+          "default": "*,slave_public",
+          "description": "Mesos framework roles that the scheduler receives offers for. Currently only * and optionally one additional role are supported.",
+          "type": "string",
+          "pattern": "^([\\w*]+)(,[\\w*]+)*$"
+        },
+        "default-pod-roles": {
+          "default": "*",
+          "description": "Roles that will be used to launch pods having no k8s.mesosphere.io/roles label.",
+          "type": "string",
+          "pattern": "^([\\w*]+)(,[\\w*]+)*$"
         },
         "uris": {
           "default": [],
           "description": "List of URIs that will be download and made available in the current working directory of the scheduler.",
           "items": {
-            "pattern": "^[\\s]+",
+            "pattern": "^[^\\s]+",
             "type": "string"
           },
           "type": "array"
+        },
+        "debug": {
+          "default": false,
+          "description": "Enable debug output",
+          "type": "boolean"
+        },
+        "generate-task-discovery": {
+          "default": false,
+          "description": "Generate Mesos task discovery information to be used by systems like mesos-dns.",
+          "type": "boolean"
+        },
+        "proxy-mode": {
+          "default": "userspace",
+          "description": "Which proxy mode to use: 'userspace' (older) or 'iptables' (faster). If the iptables proxy is selected, regardless of how, but the system's kernel or iptables versions are insufficient, this always falls back to the userspace proxy.",
+          "type": "string",
+          "pattern": "^(userspace|iptables)$"
+        },
+        "pki": {
+          "description": "Kubernetes certificates and private key configuration.",
+          "properties": {
+            "apiserver-crt": {
+              "default": "disabled",
+              "description": "Base64 encoded blob containing a x509 Certificate for HTTPS. (CA cert, if any, concatenated after server cert).",
+              "type": "string"
+            },
+            "apiserver-key": {
+              "default": "disabled",
+              "description": "Base64 encoded blob containing a x509 private key matching apiserver-crt.",
+              "type": "string"
+            },
+            "root-ca-crt": {
+              "default": "disabled",
+              "description": "Base64 encoded blob containing the root certificate authority that will be included in service account's token secret. This must be a valid PEM-encoded CA bundle.",
+              "type": "string"
+            },
+            "service-accounts-key": {
+              "default": "disabled",
+              "description": "Base64 encoded blob containing a PEM-encoded private RSA key used to sign service account tokens.",
+              "type": "string"
+            }
+          },
+          "required": [ "root-ca-crt", "apiserver-crt", "apiserver-key", "service-accounts-key" ],
+          "type": "object"
         }
       },
       "required": [
-        "app-id",
+        "enable-deployments",
+        "enable-daemonsets",
+        "etcd-mesos-framework-name",
+        "framework-name",
         "cpus",
         "dns-suffix",
         "instances",
@@ -174,8 +253,29 @@
       ],
       "type": "object"
     },
+    "marathon": {
+      "description": "Marathon specific configuration properties",
+      "properties": {
+        "labels": {
+          "default": {},
+          "description": "Set of labels to be applied to the Kubernetes Marathon application instance.",
+          "type": "object"
+        },
+        "resource-roles": {
+          "default": ["*"],
+          "description": "List of acceptable Mesos resource roles to consider when scheduling the Kubernetes Marathon container. Set to ['slave_public'] to force running Kubernetes on a public slave.",
+          "items": {
+            "pattern": "^[^\\s]+$",
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": ["labels","resource-roles"],
+      "type": "object"
+    },
     "mesos": {
-      "depscription": "Mesos specific configuration properties",
+      "description": "Mesos specific configuration properties",
       "properties": {
         "master": {
           "default": "zk://master.mesos:2181/mesos",
@@ -189,6 +289,7 @@
   },
   "required": [
     "kubernetes",
+    "marathon",
     "mesos"
   ],
   "type": "object"

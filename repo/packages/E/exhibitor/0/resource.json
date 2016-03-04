@@ -1,0 +1,14 @@
+{
+  "images": {
+    "icon-small": "http://netflix.github.io/assets/repos/exhibitor.png",
+    "icon-medium": "http://netflix.github.io/assets/repos/exhibitor.png",
+    "icon-large": "http://netflix.github.io/assets/repos/exhibitor.png"
+  },
+  "assets": {
+    "container": {
+      "docker": {
+        "exhibitor-dcos-docker": "mesosphere/exhibitor-dcos"
+      }
+    }
+  }
+}

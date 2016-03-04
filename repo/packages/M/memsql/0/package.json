@@ -1,4 +1,5 @@
 {
+  "packagingVersion": "2.0",
   "name": "memsql",
   "version": "0.0.1",
   "tags": ["mysql", "database", "rdbms"],

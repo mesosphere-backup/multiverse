@@ -1,4 +1,5 @@
 {
+  "packagingVersion": "2.0",
   "name": "spark-notebook",
   "version": "0.0.1",
   "website": "http://spark-notebook.io",

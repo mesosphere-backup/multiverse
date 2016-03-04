@@ -40,9 +40,7 @@
         "elastic"
       ],
       "versions":{
-        "0.2.0":"0",
-        "0.4.3":"1",
-        "0.7.0":"2"
+        "0.7.0":"0"
       }
     },
     {
@@ -56,8 +54,7 @@
         "consensus"
       ],
       "versions":{
-        "0.0.1":"0",
-        "0.0.2":"1"
+        "0.0.2":"0"
       }
     },
     {
@@ -70,20 +67,6 @@
       ],
       "versions":{
         "0.8.1":"0"
-      }
-    },
-    {
-      "currentVersion":"0.1.0",
-      "description":"Example DCOS application package.",
-      "framework":false,
-      "name":"helloworld",
-      "tags":[
-        "mesosphere",
-        "example",
-        "subcommand"
-      ],
-      "versions":{
-        "0.1.0":"0"
       }
     },
     {
@@ -114,29 +97,7 @@
         "paas"
       ],
       "versions":{
-        "k8s-0.14.2-k8sm-0.5-dcos-20150603T1136520000":"0",
-        "v0.7.0-v1.1.1-alpha":"3",
-        "v0.7.1-v1.1.3-alpha":"4",
-        "v0.7.2-v1.1.5-alpha":"5",
-        "v1.0.5-v0.6.4-alpha":"1",
-        "v1.0.6-v0.6.7-alpha":"2"
-      }
-    },
-    {
-      "currentVersion":"0.14.0-RC4",
-      "description":"A cluster-wide init and control system for services in cgroups or Docker containers.",
-      "framework":true,
-      "name":"marathon",
-      "tags":[
-        "init",
-        "long-running"
-      ],
-      "versions":{
-        "0.13.0-RC3":"0",
-        "0.14.0-RC1":"1",
-        "0.14.0-RC2":"2",
-        "0.14.0-RC3":"3",
-        "0.14.0-RC4":"4"
+        "v0.7.2-v1.1.5-alpha":"0"
       }
     },
     {
@@ -152,10 +113,7 @@
         "haproxy"
       ],
       "versions":{
-        "0.0.0-0.1":"2",
-        "0.0.1-0.1":"4",
-        "0.0.2-0.1":"5",
-        "0.0.3-0.1":"6"
+        "0.0.3-0.1":"0"
       }
     },
     {
@@ -289,10 +247,9 @@
         "interactive"
       ],
       "versions":{
-        "0.0.1":"0",
-        "0.5.6":"1"
+        "0.5.6":"0"
       }
     }
   ],
-  "version":"1.0.0-rc1"
+  "version":"2.0.0-rc1"
 }

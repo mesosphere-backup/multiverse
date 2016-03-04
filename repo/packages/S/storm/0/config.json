@@ -16,11 +16,6 @@
       "description": "Storm specific configuration properties",
       "type": "object",
       "properties": {
-        "docker-image": {
-          "type": "string",
-          "description": "The Docker image to use for storm.",
-          "default": "mesosphere/storm"
-        },
         "user": {
           "type": "string",
           "description": "The user that the Mesos slave will launch Storm tasks under.",

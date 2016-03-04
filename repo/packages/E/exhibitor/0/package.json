@@ -1,15 +1,11 @@
 {
+  "packagingVersion": "2.0",
   "name": "exhibitor",
   "version": "0.8.1",
   "scm": "https://github.com/netflix/exhibitor",
   "maintainer": "support@mesosphere.io",
   "description": "ZooKeeper co-process for instance monitoring, backup/recovery, cleanup and visualization.",
   "framework": false,
-  "images": {
-    "icon-small": "http://netflix.github.io/assets/repos/exhibitor.png",
-    "icon-medium": "http://netflix.github.io/assets/repos/exhibitor.png",
-    "icon-large": "http://netflix.github.io/assets/repos/exhibitor.png"
-  },
   "licenses": [
     {
       "name": "Apache License Version 2.0",
