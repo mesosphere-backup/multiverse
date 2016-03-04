@@ -28,5 +28,8 @@ validate "config.json" "$SCHEMA_DIR/config-schema.json";
 # validate all package.json files
 validate "package.json" "$SCHEMA_DIR/package-schema.json";
 
+# validate all package.json files
+validate "resource.json" "$SCHEMA_DIR/resource-schema.json";
+
 echo "OK";
 

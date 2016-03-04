@@ -3,11 +3,6 @@
     "etcd": {
       "description": "etcd specific configuration properties",
       "properties": {
-        "docker-image": {
-          "default": "mesosphere/etcd-mesos:0.1.0",
-          "description": "Docker image used to launch the etcd framework on DCOS.",
-          "type": "string"
-        },
         "dns-suffix": {
           "default": ".marathon.mesos",
           "description": "This value is appended to the framework-name value to form the canonical DNS name for the etcd components.",
@@ -85,7 +80,6 @@
         }
       },
       "required": [
-        "docker-image",
         "dns-suffix",
         "framework-name",
         "admin-port",

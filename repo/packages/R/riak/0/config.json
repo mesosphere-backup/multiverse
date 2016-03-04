@@ -1,4 +1,5 @@
 {
+  "packagingVersion": "2.0",
   "type": "object",
       "properties": {
         "riak": {
@@ -41,11 +42,6 @@
               "type": "string",
               "description": "Framework Role.",
               "default": "*"
-            },
-            "url": {
-                "type": "string",
-                "description": "Riak Mesos Framework download URL.",
-                "default": "http://riak-tools.s3.amazonaws.com/riak-mesos/coreos/riak_mesos_linux_amd64_0.1.1.tar.gz"
             },
             "auth-provider": {
                 "type": "string",
@@ -130,7 +126,6 @@
             "cpus",
             "mem",
             "super-chroot",
-            "url",
             "master",
             "zk",
             "user",

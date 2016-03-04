@@ -1,4 +1,5 @@
 {
+    "packagingVersion": "2.0",
     "description": "Cloud-scale monitoring",
     "framework": false,
     "licenses": [

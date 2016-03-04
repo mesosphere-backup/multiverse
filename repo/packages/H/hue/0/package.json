@@ -1,4 +1,5 @@
 {
+  "packagingVersion": "2.0",
   "name": "hue",
   "version": "0.0.1",
   "scm": "https://github.com/mesosphere/hue.git",

@@ -11,13 +11,13 @@ The [DCOS CLI](https://docs.mesosphere.com/install/cli/) **does not** come pre-c
 To install and use the Multiverse:
 
 ```sh
-dcos config prepend package.sources https://github.com/mesosphere/multiverse/archive/version-1.x.zip
+dcos config prepend package.sources https://github.com/mesosphere/multiverse/archive/version-2.x.zip
 dcos package update --validate
 ```
 
 ## Branches
 
-The default branch for this repository is `version-1.x`, which reflects the current schema for the Multiverse. In the future, if the format changes significantly, there will be additional branches.
+The default branch for this repository is `version-2.x`, which reflects the current schema for the Multiverse. In the future, if the format changes significantly, there will be additional branches.
 
 ## Contributing a Package
 
@@ -62,8 +62,8 @@ Before merging to Multiverse, you **must** run build.sh to regenerate the packag
 
 Packages in the Universe are required to pass Mesosphere certification. The certification requirements for the [Multiverse repository](https://github.com/mesosphere/multiverse) are less strict, which is preferable for alpha or beta quality packages. Full certification requirements are available from [Mesosphere support](https://docs.mesosphere.com/support/).
 
-Once your package meets these requirements, please submit a pull request against the `version-1.x` branch with your changes.
+Once your package meets these requirements, please submit a pull request against the `version-2.x` branch with your changes.
 
 ## Package Entries
 
-Full documentation on the repository specification is available in the [Universe README](https://github.com/mesosphere/universe/blob/version-1.x/README.md).
+Full documentation on the repository specification is available in the [Universe README](https://github.com/mesosphere/universe/blob/version-2.x/README.md).

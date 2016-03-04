@@ -43,11 +43,6 @@
           "description": "Parent ZooKeeper URL for storing state. The framework name is joined to the path of this value. Format: zk://host1:port1,host2:port2,.../path",
           "type": "string"
         },
-        "docker-image": {
-          "default": "mesosphere/exhibitor-dcos",
-          "description": "Docker image to run",
-          "type": "string"
-        },
         "zookeeper": {
           "description": "ZooKeeper specific configuration properties",
           "properties": {
@@ -91,8 +86,7 @@
         "instances",
         "zk_servers",
         "jvm_opts",
-        "mem",
-        "docker-image"
+        "mem"
       ],
       "type": "object"
     }
