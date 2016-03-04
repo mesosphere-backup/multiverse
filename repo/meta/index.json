@@ -157,6 +157,20 @@
       }
     },
     {
+      "currentVersion":"1.2",
+      "description":"Quobyte is a software defined and fault tolerant distributed file system running on commodity hardware.",
+      "framework":true,
+      "name":"quobyte",
+      "tags":[
+        "storage",
+        "filesystem",
+        "bigdata"
+      ],
+      "versions":{
+        "1.2":"0"
+      }
+    },
+    {
       "currentVersion":"0.1.1",
       "description":"A distributed NoSQL key-value data store that offers high availability, fault tolerance, operational simplicity, and scalability.",
       "framework":true,
@@ -169,34 +183,6 @@
       ],
       "versions":{
         "0.1.1":"0"
-      }
-    },
-    {
-      "currentVersion":"1.2",
-      "description":"Quobyte is a software defined distributed file system, running on commodity hardware.",
-      "framework":true,
-      "name":"quobyte",
-      "tags":[
-        "storage",
-        "filesystem",
-        "bigdata"
-      ],
-      "versions":{
-        "1.2":"0"
-      }
-    },
-    {
-      "currentVersion":"1.2",
-      "description":"Quobyte is a software defined distributed file system, running on commodity hardware.",
-      "framework":true,
-      "name":"quobyte",
-      "tags":[
-        "storage",
-        "filesystem",
-        "bigdata"
-      ],
-      "versions":{
-        "1.2":"0"
       }
     },
     {
