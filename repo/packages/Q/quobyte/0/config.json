@@ -50,16 +50,6 @@
           "description": "Port to which the framework's HTTP server is bound.",
           "default": "7878"
           },
-        "docker_image": {
-          "type": "string",
-          "description": "Docker image to be used for the Quobyte services.",
-          "default": "{{resource.assets.container.docker.f304cf7ccc31}}"
-          },
-        "framework_image": {
-          "type": "string",
-          "description": "Quobyte Mesos framework image version",
-          "default": "{{resource.assets.container.docker.f8c203e427cc}}"
-          },
         "registry_resources": {
           "type": "string",
           "description": "Resources for data service",
@@ -89,8 +79,6 @@
       "required": [
         "zk",
         "port",
-        "docker_image",
-        "framework_image",
         "registry_resources",
         "metadata_resources",
         "data_resources"
