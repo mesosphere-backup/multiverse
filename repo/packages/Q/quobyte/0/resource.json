@@ -12,7 +12,8 @@
   "assets": {
     "container": {
       "docker": {
-        "f8c203e427cc": "quobyte/quobyte-mesos"
+        "f8c203e427cc": "quobyte/quobyte-mesos",
+        "f304cf7ccc31": "quobyte-server"
       }
     }
   }
