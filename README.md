@@ -11,8 +11,7 @@ The [DCOS CLI](https://docs.mesosphere.com/install/cli/) **does not** come pre-c
 To install and use the Multiverse:
 
 ```sh
-dcos config prepend package.sources https://github.com/mesosphere/multiverse/archive/version-2.x.zip
-dcos package update --validate
+dcos package repo add Multiverse https://github.com/mesosphere/multiverse/archive/version-2.x.zip
 ```
 
 ## Branches
@@ -23,7 +22,7 @@ The default branch for this repository is `version-2.x`, which reflects the curr
 
 Interested in making your package or service available to the world? The instructions below will help you set up a local copy of the Multiverse for development.
 
-### Local Set Up
+### Development Set Up
 
 1. Clone the repo (or you may wish to fork it first):
 
@@ -43,10 +42,14 @@ Interested in making your package or service available to the world? The instruc
     bash /path/to/universe/scripts/install-git-hooks.sh
     ```
 
-4. To use the local cloned repository from the DCOS CLI for testing your own package:
+4. To test in DCOS we need to make the packages available to your cluster. We can do this using topic or feature branches. Once you have committed your changes and pushed them to a topic branch. We can use them within DCOS with:
 
     ```
-    dcos config prepend package.sources "file:///path/to/multiverse"
+    dcos package repo add Development http://github/path/to/branch/zip
+    ```
+    E.g. assuming the topic branch is named topic-branch:
+    ```
+    dcos package repo add Developement https://github.com/mesosphere/universe/archive/topic-branch.zip
     ```
 
 The pre-commit hook will run [build.sh](scripts/build.sh) before allowing you to commit. This script validates your package definitions and regenerates the index file. You may need to `git add repo/meta/index.json` after running it once before you are able to pass validation and commit your changes.
