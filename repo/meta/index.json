@@ -101,6 +101,19 @@
       }
     },
     {
+      "currentVersion":"0.16.0-RC1",
+      "description":"A cluster-wide init and control system for services in cgroups or Docker containers.",
+      "framework":true,
+      "name":"marathon",
+      "tags":[
+        "init",
+        "long-running"
+      ],
+      "versions":{
+        "0.16.0-RC1":"0"
+      }
+    },
+    {
       "currentVersion":"0.0.3-0.1",
       "description":"HAProxy configured from marathon state",
       "framework":false,
