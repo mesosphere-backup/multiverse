@@ -4,7 +4,7 @@
       "properties": {
         "riak": {
           "type": "object",
-          "depscription": "Riak Mesos Framework specific properties",
+          "description": "Riak Mesos Framework specific properties",
           "properties": {
             "master": {
               "type": "string",
@@ -75,7 +75,7 @@
             },
             "node": {
                 "type": "object",
-                "depscription": "Resource Requirements Per Riak Node",
+                "description": "Resource Requirements Per Riak Node",
                 "properties": {
                     "cpus": {
                         "type": "number",

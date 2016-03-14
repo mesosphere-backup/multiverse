@@ -97,7 +97,7 @@
       "type": "object"
     },
     "mesos": {
-      "depscription": "Mesos specific configuration properties",
+      "description": "Mesos specific configuration properties",
       "properties": {
         "master": {
           "default": "zk://master.mesos:2181/mesos",

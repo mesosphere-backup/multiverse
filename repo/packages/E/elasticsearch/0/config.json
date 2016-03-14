@@ -1,7 +1,7 @@
 {
   "properties":{
     "mesos":{
-      "depscription":"Mesos specific configuration properties",
+      "description":"Mesos specific configuration properties",
       "properties":{
         "master":{
           "default":"zk://master.mesos:2181/mesos",
@@ -15,7 +15,7 @@
       "type":"object"
     },
     "elasticsearch":{
-      "depscription":"Elasticsearch specific configuration properties",
+      "description":"Elasticsearch specific configuration properties",
       "properties":{
         "framework-name":{
           "default":"elasticsearch",
