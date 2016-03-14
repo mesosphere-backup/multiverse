@@ -2,7 +2,7 @@
   "assets": {
     "container": {
       "docker": {
-        "alq666": "docker-dd-agent:mesos"
+        "alq666": "alq666/docker-dd-agent:mesos"
     }
       }
   }
