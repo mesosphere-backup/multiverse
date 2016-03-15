@@ -3,6 +3,7 @@
     "container": {
         "docker": {
             "image": "{{resource.assets.container.docker.etcd-docker}}",
+            "network": "HOST",
             "forcePullImage": true
         },
         "type": "DOCKER",
