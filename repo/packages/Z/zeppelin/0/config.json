@@ -5,6 +5,11 @@
         "zeppelin": {
             "type": "object",
             "properties": {
+                "role": {
+                     "description": "The accepted resource roles, for example slave_public. By default, this will deploy to any agents with the * role.",
+                     "type": "string",
+                     "default": "*"
+                 },
                 "spark_version":  {
                     "description": "The version of the Spark distribution to run with Zeppelin.",
                     "type": "string",
