@@ -5,5 +5,8 @@
         "memsql-docker": "memsql/mesos-scheduler:latest"
       }
     }
+  },
+  "images": {
+
   }
 }
