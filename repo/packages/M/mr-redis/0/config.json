@@ -15,11 +15,6 @@
           "type": "string",
           "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
         },
-        "admin-port": {
-          "default": "$PORT0",
-          "description": "Admin port that the redis framework listens on.",
-          "type": "string"
-        },
         "cpus": {
           "default": 1.0,
           "description": "CPU shares to allocate to the redis framework.",
@@ -31,14 +26,20 @@
           "description": "Memory (MB) to allocate to the redis framework.",
           "minimum": 32.0,
           "type": "number"
+        },
+        "cluster-size": {
+          "default": 1.0,
+          "description": "Number of the redis scheduler we should have running by mesos.",
+          "minimum": 1.0,
+          "type": "number"
         }
       },
       "required": [
         "dns-suffix",
         "framework-name",
-        "admin-port",
         "cpus",
-        "mem"
+        "mem",
+        "cluster-size"
       ],
       "type": "object"
     },
