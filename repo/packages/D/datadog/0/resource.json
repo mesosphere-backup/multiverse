@@ -5,8 +5,5 @@
         "alq666": "alq666/docker-dd-agent:mesos"
     }
       }
-  },
-  "images": {
-
   }
 }
