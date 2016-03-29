@@ -10,8 +10,5 @@
       "hue-ini": "https://downloads.mesosphere.com/hue/hue.ini",
       "httpfs-site-xml": "https://downloads.mesosphere.com/hue/httpfs-site.xml"
     }
-  },
-  "images": {
-
   }
 }
