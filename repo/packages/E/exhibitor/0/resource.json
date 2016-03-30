@@ -1,9 +1,0 @@
-{
-  "assets": {
-    "container": {
-      "docker": {
-        "exhibitor-dcos-docker": "mesosphere/exhibitor-dcos"
-      }
-    }
-  }
-}

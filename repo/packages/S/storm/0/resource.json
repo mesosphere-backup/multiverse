@@ -1,9 +1,0 @@
-{
-  "assets": {
-    "container": {
-      "docker": {
-        "storm-docker": "mesosphere/storm"
-      }
-    }
-  }
-}
